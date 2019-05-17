@@ -49,7 +49,8 @@ aux 4 10 0 900 1300
 
 # master
 set looptime = 2000
-set gyro_hardware_lpf = 188HZ
+set gyro_hardware_lpf = 256HZ
+set gyro_lpf_hz = 35
 set acc_hardware = MPU9250
 set acczero_x = 170
 set acczero_y = 99
@@ -70,17 +71,14 @@ set model_preview_type = 8
 # profile
 profile 1
 
-set fw_p_pitch = 20
-set fw_i_pitch = 30
-set fw_ff_pitch = 15
-set fw_p_roll = 20
-set fw_i_roll = 30
-set fw_ff_roll = 15
-set fw_p_yaw = 45
-set fw_i_yaw = 5
-set fw_ff_yaw = 15
-set pitch_rate = 15
-set yaw_rate = 9
+set fw_i_pitch = 9
+set fw_ff_pitch = 56
+set fw_p_roll = 7
+set fw_ff_roll = 25
+set tpa_rate = 30
+set tpa_breakpoint = 1550
+set roll_rate = 26
+set pitch_rate = 14
 
 # battery_profile
 battery_profile 1
