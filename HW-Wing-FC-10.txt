@@ -46,6 +46,13 @@ aux 4 10 0 900 1300
 # temp_sensor
 
 # osd_layout
+osd_layout 0 9 1 2 H
+osd_layout 0 13 23 1 V
+osd_layout 0 22 14 11 V
+osd_layout 0 23 23 4 V
+osd_layout 0 33 1 2 V
+osd_layout 0 40 23 5 V
+osd_layout 0 96 24 6 V
 
 # master
 set looptime = 2000
@@ -65,8 +72,11 @@ set magzero_z = 309
 set baro_hardware = BMP280
 set pitot_hardware = NONE
 set serialrx_provider = SBUS
+set failsafe_procedure = RTH
 set align_board_yaw = 1800
 set model_preview_type = 8
+set inav_reset_home = FIRST_ARM
+set nav_rth_allow_landing = NEVER
 
 # profile
 profile 1
