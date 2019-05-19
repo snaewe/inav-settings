@@ -17,7 +17,8 @@ smix 2 4 0 -50 0
 smix 3 4 1 50 0
 
 # servo
-servo 3 1000 2000 1500 -100
+servo 3 1000 2000 1445 -100
+servo 4 1000 2000 1509 100
 
 # feature
 feature MOTOR_STOP
@@ -34,10 +35,9 @@ serial 4 0 115200 115200 0 115200
 
 # aux
 aux 0 0 3 1700 2100
-aux 1 1 1 1700 2100
-aux 2 2 1 1300 1700
-aux 3 35 0 1700 2100
-aux 4 10 0 900 1300
+aux 1 9 1 1300 1700
+aux 2 10 0 900 1300
+aux 3 27 1 1700 2100
 
 # adjrange
 
@@ -73,6 +73,7 @@ set baro_hardware = BMP280
 set pitot_hardware = NONE
 set serialrx_provider = SBUS
 set failsafe_procedure = RTH
+set align_board_pitch = -30
 set align_board_yaw = 1800
 set model_preview_type = 8
 set small_angle = 180
