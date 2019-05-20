@@ -17,7 +17,7 @@ smix 2 4 0 -50 0
 smix 3 4 1 50 0
 
 # servo
-servo 3 1000 2000 1479 -100
+servo 3 1000 2000 1480 -100
 servo 4 1000 2000 1549 100
 
 # feature
@@ -35,11 +35,12 @@ serial 4 0 115200 115200 0 115200
 
 # aux
 aux 0 0 3 1700 2100
-aux 1 3 1 1300 2100
-aux 2 9 1 1700 2100
-aux 3 10 0 900 1300
-aux 4 27 2 1300 1675
-aux 5 28 2 1700 2100
+aux 1 2 0 1700 2100
+aux 2 9 1 1275 1675
+aux 3 8 1 1700 2100
+aux 4 10 0 900 1300
+aux 5 27 2 1300 1675
+aux 6 28 2 1700 2100
 
 # adjrange
 
@@ -75,7 +76,7 @@ set baro_hardware = BMP280
 set pitot_hardware = NONE
 set serialrx_provider = SBUS
 set failsafe_procedure = RTH
-set align_board_pitch = -30
+set align_board_pitch = -40
 set align_board_yaw = 1800
 set model_preview_type = 8
 set small_angle = 180
@@ -98,8 +99,8 @@ set nav_fw_pos_z_p = 30
 set nav_fw_pos_z_i = 10
 set tpa_rate = 40
 set tpa_breakpoint = 1450
-set roll_rate = 30
-set pitch_rate = 16
+set roll_rate = 36
+set pitch_rate = 18
 
 # battery_profile
 battery_profile 1
