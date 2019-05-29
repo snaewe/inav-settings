@@ -17,8 +17,8 @@ smix 2 4 0 -50 0
 smix 3 4 1 50 0
 
 # servo
-servo 3 1000 2000 1480 -100
-servo 4 1000 2000 1549 100
+servo 3 1000 2000 1481 -100
+servo 4 1000 2000 1488 100
 
 # feature
 feature MOTOR_STOP
