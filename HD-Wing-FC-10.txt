@@ -97,10 +97,10 @@ set nav_fw_launch_climb_angle = 28
 # profile
 profile 1
 
-set fw_i_pitch = 9
-set fw_ff_pitch = 56
-set fw_p_roll = 7
-set fw_ff_roll = 25
+set fw_p_pitch = 10
+set fw_i_pitch = 22
+set fw_ff_pitch = 101
+set fw_i_roll = 11
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
 set nav_fw_pos_z_p = 30
