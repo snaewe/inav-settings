@@ -80,6 +80,7 @@ set serialrx_provider = SBUS
 set failsafe_procedure = RTH
 set align_board_pitch = -40
 set align_board_yaw = 1800
+set current_meter_scale = 132
 set model_preview_type = 8
 set small_angle = 180
 set inav_reset_home = FIRST_ARM
