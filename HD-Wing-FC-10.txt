@@ -88,6 +88,11 @@ set nav_rth_climb_first = OFF
 set nav_rth_allow_landing = NEVER
 set nav_rth_altitude = 5000
 set nav_fw_bank_angle = 35
+set nav_fw_launch_max_angle = 60
+set nav_fw_launch_thr = 1800
+set nav_fw_launch_motor_delay = 300
+set nav_fw_launch_timeout = 8000
+set nav_fw_launch_climb_angle = 28
 
 # profile
 profile 1
