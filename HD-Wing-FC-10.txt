@@ -79,6 +79,7 @@ set accgain_z = 4058
 set mag_hardware = NONE
 set baro_hardware = BMP280
 set pitot_hardware = NONE
+set failsafe_procedure = RTH
 set align_board_yaw = 1800
 set model_preview_type = 8
 set small_angle = 180
