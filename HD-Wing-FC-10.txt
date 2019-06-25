@@ -1,7 +1,7 @@
 # diff
 
 # version
-# INAV/WINGFC 2.1.0 Feb 25 2019 / 17:06:35 (65b0ec142)
+# INAV/MATEKF405SE 2.1.0 Feb 25 2019 / 17:02:18 (65b0ec142)
 # GCC-7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]
 
 # resources
@@ -17,11 +17,12 @@ smix 2 4 0 -50 0
 smix 3 4 1 50 0
 
 # servo
-servo 3 1000 2000 1481 -100
-servo 4 1000 2000 1488 100
+servo 3 1000 2000 1500 -100
 
 # feature
 feature MOTOR_STOP
+feature GPS
+feature RSSI_ADC
 feature PWM_OUTPUT_ENABLE
 
 # beeper
@@ -30,10 +31,15 @@ feature PWM_OUTPUT_ENABLE
 
 # serial
 serial 20 1 115200 115200 0 115200
-serial 0 1 57600 115200 57600 115200
-serial 2 64 115200 115200 0 115200
-serial 3 0 115200 115200 0 115200
-serial 4 0 115200 115200 0 115200
+serial 0 0 57600 115200 0 115200
+serial 2 2 115200 57600 0 115200
+serial 4 1 57600 115200 115200 115200
+
+# led
+
+# color
+
+# mode_color
 
 # aux
 aux 0 0 3 1700 2100
@@ -51,8 +57,11 @@ aux 6 28 2 1700 2100
 # temp_sensor
 
 # osd_layout
+osd_layout 0 0 16 1 V
+osd_layout 0 1 8 1 V
 osd_layout 0 9 1 2 H
-osd_layout 0 13 23 1 V
+osd_layout 0 13 23 2 V
+osd_layout 0 15 1 1 V
 osd_layout 0 22 14 11 V
 osd_layout 0 23 23 4 V
 osd_layout 0 33 1 2 V
@@ -60,29 +69,20 @@ osd_layout 0 40 23 5 V
 osd_layout 0 96 24 6 V
 
 # master
-set looptime = 2000
-set gyro_hardware_lpf = 256HZ
-set gyro_lpf_hz = 35
-set acc_hardware = MPU9250
-set acczero_x = 170
-set acczero_y = 99
-set acczero_z = -141
-set accgain_x = 4084
-set accgain_y = 4089
-set accgain_z = 4035
+set acc_hardware = MPU6000
+set acczero_x = 77
+set acczero_y = -41
+set acczero_z = -468
+set accgain_x = 4100
+set accgain_y = 4072
+set accgain_z = 4058
 set mag_hardware = NONE
-set magzero_x = 8
-set magzero_y = 148
-set magzero_z = 309
 set baro_hardware = BMP280
 set pitot_hardware = NONE
-set serialrx_provider = SBUS
-set failsafe_procedure = RTH
-set align_board_pitch = -40
 set align_board_yaw = 1800
-set current_meter_scale = 268
 set model_preview_type = 8
 set small_angle = 180
+set gps_sbas_mode = EGNOS
 set inav_reset_home = FIRST_ARM
 set nav_rth_climb_first = OFF
 set nav_rth_allow_landing = NEVER
