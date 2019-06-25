@@ -80,7 +80,7 @@ set serialrx_provider = SBUS
 set failsafe_procedure = RTH
 set align_board_pitch = -40
 set align_board_yaw = 1800
-set current_meter_scale = 132
+set current_meter_scale = 268
 set model_preview_type = 8
 set small_angle = 180
 set inav_reset_home = FIRST_ARM
@@ -93,6 +93,7 @@ set nav_fw_launch_thr = 1800
 set nav_fw_launch_motor_delay = 300
 set nav_fw_launch_timeout = 8000
 set nav_fw_launch_climb_angle = 28
+set tz_offset = 120
 
 # profile
 profile 1
@@ -103,6 +104,7 @@ set fw_ff_pitch = 101
 set fw_i_roll = 11
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
+set fw_loiter_direction = YAW
 set nav_fw_pos_z_p = 30
 set nav_fw_pos_z_i = 10
 set tpa_rate = 40
