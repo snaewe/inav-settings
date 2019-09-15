@@ -52,7 +52,7 @@ aux 6 10 1 900 1300
 aux 7 27 6 1300 1675
 aux 8 28 6 1725 2100
 aux 9 32 5 1300 1700
-aux 10 33 5 1700 2100
+aux 10 34 5 1700 2100
 
 # adjrange
 
@@ -109,6 +109,9 @@ osd_layout 1 34 10 2 V
 osd_layout 1 40 8 14 H
 osd_layout 1 41 2 8 H
 osd_layout 1 42 2 7 H
+osd_layout 3 0 14 1 V
+osd_layout 3 1 1 11 V
+osd_layout 3 3 8 6 V
 
 # master
 set gyro_hardware_lpf = 256HZ
@@ -130,7 +133,6 @@ set rssi_channel = 8
 set max_throttle = 2000
 set failsafe_procedure = RTH
 set align_board_roll = -60
-set align_board_pitch = 10
 set align_board_yaw = 900
 set current_meter_scale = 423
 set platform_type = AIRPLANE
@@ -164,6 +166,7 @@ set fw_ff_pitch = 52
 set fw_p_roll = 6
 set fw_i_roll = 6
 set fw_ff_roll = 49
+set fw_p_yaw = 5
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
 set fw_loiter_direction = YAW
@@ -173,6 +176,8 @@ set tpa_rate = 20
 set tpa_breakpoint = 1600
 set roll_rate = 36
 set pitch_rate = 18
+set manual_roll_rate = 70
+set manual_pitch_rate = 70
 
 # battery_profile
 battery_profile 1
