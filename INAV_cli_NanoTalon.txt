@@ -1,0 +1,91 @@
+diff
+
+# version
+# INAV/OMNIBUSF4V3_S6_SS 2.2.1 Jul  3 2019 / 22:15:59 (a6d847482)
+# GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
+
+# resources
+
+# mixer
+mmix 0  1.000  0.000  0.000  0.000
+
+# servo mix
+smix 0 2 0 -100 0 -1
+smix 1 3 1 -50 0 -1
+smix 2 4 1 50 0 -1
+smix 3 3 2 50 0 -1
+smix 4 4 2 50 0 -1
+
+# servo
+
+# logic
+
+# feature
+feature SOFTSERIAL
+feature TELEMETRY
+feature CURRENT_METER
+feature PWM_OUTPUT_ENABLE
+
+# beeper
+
+# map
+
+# serial
+serial 0 64 115200 115200 0 115200
+serial 30 32 115200 115200 0 115200
+
+# led
+
+# color
+
+# mode_color
+
+# aux
+aux 0 0 0 1700 2100
+
+# adjrange
+
+# rxrange
+
+# temp_sensor
+
+# wp
+#wp 0 invalid
+
+# osd_layout
+
+# master
+set gyro_hardware_lpf = 20HZ
+set acc_hardware = MPU6000
+set acczero_x = 139
+set acczero_y = -35
+set acczero_z = -537
+set accgain_x = 4062
+set accgain_y = 4114
+set accgain_z = 3954
+set mag_hardware = NONE
+set baro_hardware = BMP280
+set pitot_hardware = NONE
+set receiver_type = SERIAL
+set rssi_channel = 8
+set serialrx_provider = SBUS
+set failsafe_procedure = DROP
+set align_board_pitch = 50
+set current_meter_scale = 450
+set platform_type = AIRPLANE
+set model_preview_type = 30
+set 3d_deadband_low = 1425
+set 3d_neutral = 1475
+set nav_rth_allow_landing = NEVER
+set nav_rth_altitude = 7000
+set name = NanoTalon
+
+# profile
+profile 1
+
+
+# battery_profile
+battery_profile 1
+
+
+# 
