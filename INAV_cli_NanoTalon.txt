@@ -163,6 +163,9 @@ set gps_sbas_mode = EGNOS
 set gps_ublox_use_galileo = ON
 set nav_rth_allow_landing = NEVER
 set nav_rth_altitude = 7000
+set nav_fw_cruise_thr = 1450
+set nav_fw_bank_angle = 40
+set nav_fw_dive_angle = 20
 set nav_fw_loiter_radius = 6000
 set osd_video_system = PAL
 set osd_time_alarm = 15
@@ -176,8 +179,8 @@ set name = NanoTalon
 # profile
 profile 1
 
-set rc_expo = 40
-set manual_rc_expo = 40
+set rc_expo = 50
+set manual_rc_expo = 50
 
 # battery_profile
 battery_profile 1
