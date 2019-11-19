@@ -30,6 +30,8 @@ feature CURRENT_METER
 feature PWM_OUTPUT_ENABLE
 
 # beeper
+beeper -RX_LOST
+beeper -ON_USB
 
 # map
 
@@ -57,8 +59,9 @@ aux 5 35 4 1700 2100
 aux 6 10 1 900 1300
 aux 7 27 6 1300 1675
 aux 8 28 6 1725 2100
-aux 9 32 5 1300 1700
-aux 10 34 5 1700 2100
+aux 9 11 7 1300 2100
+aux 10 32 5 1300 1700
+aux 11 34 5 1700 2100
 
 # adjrange
 
@@ -150,9 +153,9 @@ set max_throttle = 2000
 set motor_pwm_rate = 2000
 set motor_pwm_protocol = MULTISHOT
 set failsafe_procedure = RTH
-set align_board_pitch = -10
+set align_board_pitch = 10
 set align_board_yaw = 900
-set current_meter_scale = 450
+set current_meter_scale = 374
 set platform_type = AIRPLANE
 set model_preview_type = 30
 set 3d_deadband_low = 1425
