@@ -17,12 +17,13 @@ smix 3 3 2 75 0 -1
 smix 4 4 2 75 0 -1
 
 # servo
-servo 2 1000 2000 1577 75
+servo 2 1000 2000 1500 80
 
 # logic
 
 # feature
 feature -TX_PROF_SEL
+feature MOTOR_STOP
 feature SOFTSERIAL
 feature GPS
 feature TELEMETRY
@@ -59,7 +60,7 @@ aux 5 35 4 1700 2100
 aux 6 10 1 900 1300
 aux 7 27 6 1300 1675
 aux 8 28 6 1725 2100
-aux 9 11 7 1300 2100
+aux 9 11 7 1725 2100
 aux 10 32 5 1300 1700
 aux 11 34 5 1700 2100
 
@@ -148,19 +149,20 @@ set rssi_channel = 16
 set serialrx_provider = FPORT
 set serialrx_inverted = ON
 set serialrx_halfduplex = ON
-set min_throttle = 1000
+set min_throttle = 1060
 set max_throttle = 2000
-set motor_pwm_rate = 2000
-set motor_pwm_protocol = MULTISHOT
+set motor_pwm_rate = 4000
+set motor_pwm_protocol = DSHOT150
 set failsafe_procedure = RTH
-set align_board_pitch = 10
+set align_board_roll = -10
 set align_board_yaw = 900
-set current_meter_scale = 374
+set current_meter_scale = 265
 set platform_type = AIRPLANE
 set model_preview_type = 30
 set 3d_deadband_low = 1425
 set 3d_neutral = 1475
 set small_angle = 180
+set imu_acc_ignore_rate = 10
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
 set gps_ublox_use_galileo = ON
@@ -182,11 +184,16 @@ set name = NanoTalon
 # profile
 profile 1
 
+set fw_ff_pitch = 60
+set fw_ff_roll = 60
+set fw_i_yaw = 7
+set fw_ff_yaw = 67
+set max_angle_inclination_rll = 600
+set max_angle_inclination_pit = 600
 set rc_expo = 50
+set pitch_rate = 15
+set yaw_rate = 10
 set manual_rc_expo = 50
 
 # battery_profile
 battery_profile 1
-
-
-# 
