@@ -17,7 +17,7 @@ smix 3 3 2 75 0 -1
 smix 4 4 2 75 0 -1
 
 # servo
-servo 2 1000 2000 1500 80
+servo 2 1000 2000 1500 83
 
 # logic
 
@@ -78,7 +78,7 @@ osd_layout 0 0 13 1 V
 osd_layout 0 1 1 11 V
 osd_layout 0 7 24 3 V
 osd_layout 0 9 1 3 H
-osd_layout 0 10 10 1 H
+osd_layout 0 10 22 1 V
 osd_layout 0 11 1 10 V
 osd_layout 0 12 0 4 V
 osd_layout 0 13 25 9 V
@@ -175,6 +175,10 @@ set nav_fw_loiter_radius = 6000
 set osd_video_system = PAL
 set osd_time_alarm = 15
 set osd_alt_alarm = 190
+set osd_neg_alt_alarm = 0
+set osd_gforce_alarm =  0.000
+set osd_gforce_axis_alarm_min =  0.000
+set osd_gforce_axis_alarm_max =  0.000
 set osd_hud_homing = ON
 set osd_left_sidebar_scroll = GROUND_SPEED
 set osd_right_sidebar_scroll = ALTITUDE
@@ -190,10 +194,10 @@ set fw_i_yaw = 7
 set fw_ff_yaw = 67
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
-set rc_expo = 50
+set rc_expo = 40
 set pitch_rate = 15
 set yaw_rate = 10
 set manual_rc_expo = 50
 
 # battery_profile
-battery_profile 1
+battery_profile 1
