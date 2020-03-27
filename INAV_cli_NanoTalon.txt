@@ -199,5 +199,42 @@ set pitch_rate = 15
 set yaw_rate = 10
 set manual_rc_expo = 50
 
+# profile
+profile 2
+
+set manual_rc_expo = 40
+set manual_roll_rate = 75
+set manual_pitch_rate = 75
+set manual_yaw_rate = 75
+
+# profile
+profile 3
+
+set fw_p_pitch = 20
+set fw_i_pitch = 30
+set fw_ff_pitch = 15
+set fw_p_roll = 20
+set fw_i_roll = 30
+set fw_ff_roll = 15
+set fw_p_yaw = 45
+set fw_i_yaw = 5
+set fw_ff_yaw = 15
+set pitch_rate = 15
+set yaw_rate = 9
+set manual_rc_expo = 40
+
 # battery_profile
-battery_profile 1
+battery_profile 1
+
+
+# battery_profile
+battery_profile 2
+
+
+# battery_profile
+battery_profile 3
+
+
+# restore original profile selection
+profile 1
+battery_profile 1
