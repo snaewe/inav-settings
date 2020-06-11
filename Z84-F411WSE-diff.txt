@@ -1,0 +1,176 @@
+# version
+# INAV/MATEKF411SE 2.4.0 Feb 11 2020 / 23:07:15 (bcd4caef9)
+# GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
+
+# status
+System Uptime: 225 seconds
+Current Time: 2041-06-28T03:04:00.000+02:00
+Voltage: 16.33V (4S battery - OK)
+CPU Clock=96MHz, GYRO=MPU6000, ACC=MPU6000, BARO=BMP280
+STM32 system clocks:
+  SYSCLK = 96 MHz
+  HCLK   = 96 MHz
+  PCLK1  = 48 MHz
+  PCLK2  = 96 MHz
+Sensor status: GYRO=OK, ACC=OK, MAG=NONE, BARO=OK, RANGEFINDER=NONE, OPFLOW=NONE, GPS=UNAVAILABLE
+Stack size: 6144, Stack address: 0x20020000, Heap available: 1628
+I2C Errors: 0, config size: 5787, max available config: 16384
+ADC channel usage:
+   BATTERY : configured = ADC 1, used = ADC 1
+      RSSI : configured = ADC 3, used = none
+   CURRENT : configured = ADC 2, used = ADC 2
+  AIRSPEED : configured = ADC 4, used = none
+System load: 7, cycle time: 1007, PID rate: 993, RX rate: 151, System rate: 9
+Arming disabled flags: NAV HWFAIL CLI
+
+# diff
+
+# version
+# INAV/MATEKF411SE 2.4.0 Feb 11 2020 / 23:07:15 (bcd4caef9)
+# GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
+
+# start the command batch
+batch start
+
+# resources
+
+# mixer
+mmix 0  1.000  0.000  0.000  0.000
+mmix 1  1.000  0.000  0.000  0.000
+
+# servo mix
+smix 0 3 0 50 0 -1
+smix 1 3 1 50 0 -1
+smix 2 4 0 -50 0 -1
+smix 3 4 1 50 0 -1
+
+# servo
+servo 3 1000 2000 1500 -100
+
+# logic
+
+# gf
+
+# feature
+feature MOTOR_STOP
+feature GPS
+feature LED_STRIP
+feature DASHBOARD
+feature PWM_OUTPUT_ENABLE
+
+# beeper
+
+# map
+
+# serial
+serial 0 2 115200 115200 0 115200
+serial 31 32 115200 115200 0 115200
+
+# led
+led 0 5,7::G:0
+led 1 6,7::AW:0
+led 2 7,7::L:1
+led 3 8,7::CT:10
+
+# color
+
+# mode_color
+mode_color 6 0 10
+mode_color 6 1 3
+
+# aux
+aux 0 0 0 1700 2100
+aux 1 2 1 1700 2100
+aux 2 3 4 1300 2100
+aux 3 3 2 1300 1700
+aux 4 9 2 1300 1700
+aux 5 8 2 1700 2100
+aux 6 35 4 1700 2100
+aux 7 10 1 900 1300
+
+# adjrange
+
+# rxrange
+
+# temp_sensor
+
+# wp
+#wp 0 invalid
+
+# osd_layout
+
+# master
+set gyro_hardware_lpf = 20HZ
+set acc_hardware = MPU6000
+set acczero_x = 71
+set acczero_y = -8
+set acczero_z = -233
+set accgain_x = 4091
+set accgain_y = 4106
+set accgain_z = 4026
+set mag_hardware = NONE
+set baro_hardware = BMP280
+set pitot_hardware = NONE
+set rssi_channel = 16
+set failsafe_procedure = RTH
+set align_board_roll = -40
+set align_board_yaw = 900
+set platform_type = AIRPLANE
+set model_preview_type = 8
+set small_angle = 180
+set applied_defaults = 3
+set gps_provider = UBLOX7
+set gps_sbas_mode = EGNOS
+set gps_ublox_use_galileo = ON
+set nav_rth_allow_landing = NEVER
+set nav_rth_altitude = 7000
+set nav_fw_cruise_thr = 1500
+set nav_fw_max_thr = 1800
+set nav_fw_bank_angle = 60
+set nav_fw_climb_angle = 25
+set name = Z84
+set tz_offset = 120
+
+# profile
+profile 1
+
+set mc_p_pitch = 20
+set mc_d_pitch = 0
+set mc_p_roll = 20
+set mc_d_roll = 0
+set mc_p_yaw = 45
+set mc_i_yaw = 5
+set mc_i_level = 5
+set fw_p_pitch = 2
+set fw_i_pitch = 15
+set fw_ff_pitch = 70
+set fw_p_roll = 2
+set fw_i_roll = 15
+set fw_ff_roll = 30
+set fw_p_level = 10
+set fw_i_level = 15
+set max_angle_inclination_rll = 600
+set max_angle_inclination_pit = 600
+set yaw_lpf_hz = 30
+set nav_mc_pos_z_p = 40
+set nav_mc_vel_z_p = 0
+set nav_mc_vel_z_i = 0
+set nav_mc_vel_z_d = 0
+set nav_mc_pos_xy_p = 75
+set nav_mc_vel_xy_p = 0
+set nav_mc_vel_xy_i = 0
+set nav_mc_vel_xy_d = 0
+set nav_mc_vel_xy_ff = 0
+set tpa_rate = 33
+set tpa_breakpoint = 1300
+set rc_expo = 30
+set roll_rate = 35
+set pitch_rate = 9
+set manual_rc_expo = 30
+
+# battery_profile
+battery_profile 1
+
+
+# end the command batch
+batch end
