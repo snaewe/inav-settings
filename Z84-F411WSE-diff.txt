@@ -88,9 +88,12 @@ aux 4 9 2 1300 1700
 aux 5 8 2 1700 2100
 aux 6 35 4 1700 2100
 aux 7 10 1 900 1300
-aux 8 32 5 1300 1700
-aux 9 33 6 1700 2100
-aux 10 34 5 1700 2100
+aux 8 27 6 1300 1700
+aux 9 28 6 1700 2100
+aux 10 11 7 1700 2100
+aux 11 32 5 1300 1700
+aux 12 33 6 1700 2100
+aux 13 34 5 1700 2100
 
 # adjrange
 
@@ -197,12 +200,14 @@ set mag_hardware = NONE
 set baro_hardware = BMP280
 set pitot_hardware = NONE
 set rssi_channel = 16
+set motor_pwm_rate = 50
 set failsafe_procedure = RTH
 set align_board_roll = -40
 set align_board_yaw = 900
 set platform_type = AIRPLANE
 set model_preview_type = 8
 set small_angle = 180
+set imu_acc_ignore_rate = 10
 set applied_defaults = 3
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
@@ -224,6 +229,7 @@ set name = Z84
 set tz_offset = 120
 set vtx_band = 2
 set vtx_channel = 4
+set vtx_power = 2
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_freq = 5790
 
