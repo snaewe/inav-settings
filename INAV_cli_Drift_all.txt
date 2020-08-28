@@ -18,14 +18,14 @@ smix reset
 
 smix 0 3 0 -100 0 -1
 smix 1 4 0 -100 0 -1
-smix 2 2 1 -100 0 -1
+smix 2 2 1 100 0 -1
 
 # servo
 servo 0 1000 2000 1500 100
 servo 1 1000 2000 1500 100
-servo 2 1000 2000 1500 100
-servo 3 1000 2000 1500 100
-servo 4 1000 2000 1500 100
+servo 2 1000 2000 1489 100
+servo 3 1000 2000 1517 100
+servo 4 1000 2000 1517 100
 servo 5 1000 2000 1500 100
 servo 6 1000 2000 1500 100
 servo 7 1000 2000 1500 100
@@ -241,7 +241,7 @@ mode_color 6 10 0
 aux 0 0 0 900 1300
 aux 1 2 1 1700 2100
 aux 2 3 4 1300 2100
-aux 3 9 2 1700 2100
+aux 3 9 2 1300 1700
 aux 4 8 2 1700 2100
 aux 5 19 7 1700 2100
 aux 6 35 4 1700 2100
@@ -909,7 +909,7 @@ set imu_dcm_kp = 2500
 set imu_dcm_ki = 50
 set imu_dcm_kp_mag = 10000
 set imu_dcm_ki_mag = 0
-set small_angle = 25
+set small_angle = 180
 set imu_acc_ignore_rate = 0
 set imu_acc_ignore_slope = 0
 set fixed_wing_auto_arm = OFF
@@ -985,7 +985,7 @@ set nav_overrides_motor_stop = ON
 set nav_rth_climb_first = OFF
 set nav_rth_climb_ignore_emerg = OFF
 set nav_rth_tail_first = OFF
-set nav_rth_allow_landing = ALWAYS
+set nav_rth_allow_landing = FS_ONLY
 set nav_rth_alt_mode = AT_LEAST_LINEAR_DESCENT
 set nav_rth_abort_threshold = 50000
 set nav_max_terrain_follow_alt = 100
@@ -1006,9 +1006,9 @@ set nav_mc_braking_boost_disengage_speed = 100
 set nav_mc_braking_bank_angle = 40
 set nav_mc_pos_deceleration_time = 120
 set nav_mc_pos_expo = 10
-set nav_fw_cruise_thr = 1400
+set nav_fw_cruise_thr = 1500
 set nav_fw_min_thr = 1200
-set nav_fw_max_thr = 1800
+set nav_fw_max_thr = 1900
 set nav_fw_bank_angle = 59
 set nav_fw_climb_angle = 40
 set nav_fw_dive_angle = 20
@@ -1020,16 +1020,16 @@ set nav_fw_launch_velocity = 300
 set nav_fw_launch_accel = 1863
 set nav_fw_launch_max_angle = 45
 set nav_fw_launch_detect_time = 40
-set nav_fw_launch_thr = 1700
+set nav_fw_launch_thr = 1850
 set nav_fw_launch_idle_thr = 1000
-set nav_fw_launch_motor_delay = 350
+set nav_fw_launch_motor_delay = 250
 set nav_fw_launch_spinup_time = 100
 set nav_fw_launch_min_time = 0
 set nav_fw_launch_timeout = 5000
 set nav_fw_launch_max_altitude = 0
 set nav_fw_launch_climb_angle = 18
 set nav_fw_cruise_yaw_rate = 20
-set nav_fw_allow_manual_thr_increase = OFF
+set nav_fw_allow_manual_thr_increase = ON
 set telemetry_switch = OFF
 set telemetry_inverted = OFF
 set frsky_default_latitude =  0.000
@@ -1097,7 +1097,7 @@ set osd_sidebar_scroll_arrows = OFF
 set osd_main_voltage_decimals = 1
 set osd_coordinate_digits = 9
 set osd_estimations_wind_compensation = ON
-set osd_failsafe_switch_layout = OFF
+set osd_failsafe_switch_layout = ON
 set osd_plus_code_digits = 11
 set i2c_speed = 400KHZ
 set debug_mode = NONE
@@ -1171,7 +1171,7 @@ set dterm_notch_cutoff = 1
 set pidsum_limit = 500
 set pidsum_limit_yaw = 350
 set iterm_windup = 50
-set rate_accel_limit_roll_pitch = 5000
+set rate_accel_limit_roll_pitch = 1750
 set rate_accel_limit_yaw = 10000
 set heading_hold_rate_limit = 90
 set nav_mc_pos_z_p = 50
@@ -1214,8 +1214,8 @@ set pitch_rate = 15
 set yaw_rate = 9
 set manual_rc_expo = 70
 set manual_rc_yaw_expo = 20
-set manual_roll_rate = 85
-set manual_pitch_rate = 75
+set manual_roll_rate = 80
+set manual_pitch_rate = 70
 set manual_yaw_rate = 100
 set fpv_mix_degrees = 0
 
