@@ -98,7 +98,6 @@ feature SOFTSERIAL
 feature GPS
 feature TELEMETRY
 feature CURRENT_METER
-feature AIRMODE
 feature PWM_OUTPUT_ENABLE
 feature OSD
 
@@ -682,7 +681,7 @@ osd_layout 3 4 8 6 H
 osd_layout 3 5 23 8 H
 osd_layout 3 6 23 9 H
 osd_layout 3 7 13 12 H
-osd_layout 3 8 20 2 H
+osd_layout 3 8 13 14 V
 osd_layout 3 9 1 2 H
 osd_layout 3 10 8 6 H
 osd_layout 3 11 2 3 H
@@ -878,8 +877,8 @@ set failsafe_fw_yaw_rate = -45
 set failsafe_min_distance = 0
 set failsafe_min_distance_procedure = DROP
 set failsafe_mission = ON
-set align_board_roll = 0
-set align_board_pitch = 40
+set align_board_roll = 10
+set align_board_pitch = 30
 set align_board_yaw = 0
 set vbat_meter_type = ADC
 set vbat_scale = 1100
