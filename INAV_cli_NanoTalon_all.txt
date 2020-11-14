@@ -13,7 +13,8 @@ STM32 system clocks:
   PCLK1  = 42 MHz
   PCLK2  = 84 MHz
 Sensor status: GYRO=OK, ACC=OK, MAG=NONE, BARO=OK, RANGEFINDER=NONE, OPFLOW=NONE, GPS=OK
-SD card: None inserted
+SD card: Manufacturer 0x1b, 1954816kB, 09/2012, v1.0, '00000'
+Filesystem: Ready
 Stack size: 6144, Stack address: 0x10010000, Heap available: 1728
 I2C Errors: 0, config size: 5621, max available config: 131072
 ADC channel usage:
@@ -21,7 +22,7 @@ ADC channel usage:
       RSSI : configured = ADC 3, used = none
    CURRENT : configured = ADC 1, used = ADC 1
   AIRSPEED : configured = none, used = none
-System load: 3, cycle time: 1003, PID rate: 997, RX rate: 18181, System rate: 9
+System load: 3, cycle time: 1006, PID rate: 994, RX rate: 49, System rate: 9
 Arming disabled flags: NAV RX CLI AUTOTRIM
 
 # dump all
@@ -53,9 +54,9 @@ smix 4 4 2 50 0 -1
 # servo
 servo 0 1000 2000 1500 100
 servo 1 1000 2000 1500 100
-servo 2 1000 2000 1562 83
-servo 3 1000 2000 1669 100
-servo 4 1000 2000 1455 100
+servo 2 1000 2000 1545 100
+servo 3 1000 2000 1436 100
+servo 4 1000 2000 1408 100
 servo 5 1000 2000 1500 100
 servo 6 1000 2000 1500 100
 servo 7 1000 2000 1500 100
@@ -278,8 +279,8 @@ aux 8 14 7 1300 1700
 aux 9 27 6 1300 1675
 aux 10 28 6 1725 2100
 aux 11 32 5 1300 1700
-aux 12 34 5 1700 2100
-aux 13 0 0 900 900
+aux 12 33 8 1175 2100
+aux 13 34 5 1700 2100
 aux 14 0 0 900 900
 aux 15 0 0 900 900
 aux 16 0 0 900 900
@@ -288,11 +289,11 @@ aux 18 0 0 900 900
 aux 19 0 0 900 900
 
 # adjrange
-adjrange 0 0 0 900 900 0 0
-adjrange 1 0 0 900 900 0 0
-adjrange 2 0 0 900 900 0 0
-adjrange 3 0 0 900 900 0 0
-adjrange 4 0 0 900 900 0 0
+adjrange 0 0 8 1125 1200 31 3
+adjrange 1 0 8 1225 1275 30 3
+adjrange 2 0 8 1325 1375 29 3
+adjrange 3 0 8 1475 1525 28 3
+adjrange 4 0 8 1950 2100 35 3
 adjrange 5 0 0 900 900 0 0
 adjrange 6 0 0 900 900 0 0
 adjrange 7 0 0 900 900 0 0
@@ -444,7 +445,7 @@ osd_layout 0 59 2 12 H
 osd_layout 0 60 2 12 H
 osd_layout 0 61 2 12 H
 osd_layout 0 62 2 10 H
-osd_layout 0 63 2 11 H
+osd_layout 0 63 22 2 H
 osd_layout 0 64 2 12 H
 osd_layout 0 65 2 12 H
 osd_layout 0 66 2 12 H
@@ -597,8 +598,8 @@ osd_layout 1 105 3 5 H
 osd_layout 1 106 1 2 H
 osd_layout 2 0 23 0 H
 osd_layout 2 1 12 0 H
-osd_layout 2 2 0 0 H
-osd_layout 2 3 8 6 H
+osd_layout 2 2 0 0 V
+osd_layout 2 3 8 6 V
 osd_layout 2 4 8 6 H
 osd_layout 2 5 23 8 H
 osd_layout 2 6 23 9 H
@@ -652,13 +653,13 @@ osd_layout 2 53 12 1 H
 osd_layout 2 54 12 1 H
 osd_layout 2 55 1 8 H
 osd_layout 2 56 2 12 H
-osd_layout 2 57 2 12 H
+osd_layout 2 57 2 12 V
 osd_layout 2 58 2 12 H
 osd_layout 2 59 2 12 H
 osd_layout 2 60 2 12 H
 osd_layout 2 61 2 12 H
-osd_layout 2 62 2 10 H
-osd_layout 2 63 2 11 H
+osd_layout 2 62 2 10 V
+osd_layout 2 63 2 11 V
 osd_layout 2 64 2 12 H
 osd_layout 2 65 2 12 H
 osd_layout 2 66 2 12 H
@@ -670,9 +671,9 @@ osd_layout 2 71 2 12 H
 osd_layout 2 72 2 12 H
 osd_layout 2 73 2 12 H
 osd_layout 2 74 2 12 H
-osd_layout 2 75 2 12 H
-osd_layout 2 76 2 12 H
-osd_layout 2 77 2 12 H
+osd_layout 2 75 11 11 V
+osd_layout 2 76 11 10 V
+osd_layout 2 77 11 12 H
 osd_layout 2 78 0 0 H
 osd_layout 2 79 2 12 H
 osd_layout 2 80 2 12 H
@@ -735,7 +736,7 @@ osd_layout 3 29 23 12 H
 osd_layout 3 30 1 13 V
 osd_layout 3 31 0 10 H
 osd_layout 3 32 1 12 H
-osd_layout 3 33 6 2 H
+osd_layout 3 33 0 10 V
 osd_layout 3 34 18 2 H
 osd_layout 3 35 1 5 H
 osd_layout 3 36 1 5 H
@@ -906,8 +907,8 @@ set failsafe_fw_yaw_rate = -45
 set failsafe_min_distance = 0
 set failsafe_min_distance_procedure = DROP
 set failsafe_mission = ON
-set align_board_roll = -38
-set align_board_pitch = 0
+set align_board_roll = -35
+set align_board_pitch = -5
 set align_board_yaw = 900
 set vbat_meter_type = ADC
 set vbat_scale = 1100
@@ -1003,7 +1004,7 @@ set nav_land_slowdown_maxalt = 2000
 set nav_emerg_landing_speed = 500
 set nav_min_rth_distance = 500
 set nav_overrides_motor_stop = ON
-set nav_rth_climb_first = ON
+set nav_rth_climb_first = OFF
 set nav_rth_climb_ignore_emerg = OFF
 set nav_rth_tail_first = OFF
 set nav_rth_allow_landing = NEVER
@@ -1028,7 +1029,7 @@ set nav_mc_pos_expo = 10
 set nav_fw_cruise_thr = 1450
 set nav_fw_min_thr = 1200
 set nav_fw_max_thr = 1700
-set nav_fw_bank_angle = 60
+set nav_fw_bank_angle = 45
 set nav_fw_climb_angle = 20
 set nav_fw_dive_angle = 20
 set nav_fw_pitch2thr = 10
@@ -1040,15 +1041,15 @@ set nav_fw_launch_accel = 1863
 set nav_fw_launch_max_angle = 90
 set nav_fw_launch_detect_time = 40
 set nav_fw_launch_thr = 1800
-set nav_fw_launch_idle_thr = 1000
+set nav_fw_launch_idle_thr = 1100
 set nav_fw_launch_motor_delay = 150
 set nav_fw_launch_spinup_time = 100
 set nav_fw_launch_min_time = 0
 set nav_fw_launch_timeout = 5000
 set nav_fw_launch_max_altitude = 0
-set nav_fw_launch_climb_angle = 20
+set nav_fw_launch_climb_angle = 18
 set nav_fw_cruise_yaw_rate = 20
-set nav_fw_allow_manual_thr_increase = OFF
+set nav_fw_allow_manual_thr_increase = ON
 set telemetry_switch = OFF
 set telemetry_inverted = OFF
 set frsky_default_latitude =  0.000
@@ -1337,10 +1338,10 @@ set mc_i_level = 15
 set mc_d_level = 75
 set fw_p_pitch = 11
 set fw_i_pitch = 15
-set fw_ff_pitch = 30
+set fw_ff_pitch = 45
 set fw_p_roll = 10
 set fw_i_roll = 15
-set fw_ff_roll = 15
+set fw_ff_roll = 30
 set fw_p_yaw = 45
 set fw_i_yaw = 5
 set fw_ff_yaw = 15
@@ -1377,9 +1378,9 @@ set nav_mc_vel_xy_d = 100
 set nav_mc_vel_xy_ff = 40
 set nav_mc_heading_p = 60
 set nav_mc_vel_xy_dterm_lpf_hz =  2.000
-set nav_fw_pos_z_p = 40
-set nav_fw_pos_z_i = 5
-set nav_fw_pos_z_d = 10
+set nav_fw_pos_z_p = 30
+set nav_fw_pos_z_i = 2
+set nav_fw_pos_z_d = 5
 set nav_fw_pos_xy_p = 50
 set nav_fw_pos_xy_i = 5
 set nav_fw_pos_xy_d = 8
@@ -1395,8 +1396,8 @@ set antigravity_accelerator =  1.000
 set antigravity_cutoff_lpf_hz = 15
 set thr_mid = 50
 set thr_expo = 0
-set tpa_rate = 0
-set tpa_breakpoint = 1500
+set tpa_rate = 40
+set tpa_breakpoint = 1550
 set fw_tpa_time_constant = 0
 set rc_expo = 40
 set rc_yaw_expo = 20
