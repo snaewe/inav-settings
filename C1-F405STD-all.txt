@@ -130,7 +130,7 @@ beeper MULTI_BEEPS
 beeper DISARM_REPEAT
 beeper ARMED
 beeper SYSTEM_INIT
-beeper ON_USB
+beeper -ON_USB
 beeper LAUNCH_MODE
 beeper CAM_CONNECTION_OPEN
 beeper CAM_CONNECTION_CLOSED
@@ -248,7 +248,7 @@ mode_color 6 9 0
 mode_color 6 10 0
 
 # aux
-aux 0 0 0 1700 2100
+aux 0 0 0 900 1300
 aux 1 2 1 1700 2100
 aux 2 3 4 1300 2100
 aux 3 3 2 1300 1650
@@ -259,7 +259,7 @@ aux 7 12 1 900 1300
 aux 8 37 6 1300 1675
 aux 9 21 6 1750 2100
 aux 10 42 5 1300 1650
-aux 11 43 6 1350 2100
+aux 11 43 7 1100 2100
 aux 12 44 5 1750 2100
 aux 13 0 0 900 900
 aux 14 0 0 900 900
@@ -270,11 +270,11 @@ aux 18 0 0 900 900
 aux 19 0 0 900 900
 
 # adjrange
-adjrange 0 0 0 900 900 0 0
-adjrange 1 0 0 900 900 0 0
-adjrange 2 0 0 900 900 0 0
-adjrange 3 0 0 900 900 0 0
-adjrange 4 0 0 900 900 0 0
+adjrange 0 0 7 1125 1200 31 3
+adjrange 1 0 7 1225 1275 30 3
+adjrange 2 0 7 1325 1375 29 3
+adjrange 3 0 7 1475 1525 28 3
+adjrange 4 0 7 1950 2100 35 3
 adjrange 5 0 0 900 900 0 0
 adjrange 6 0 0 900 900 0 0
 adjrange 7 0 0 900 900 0 0
@@ -363,49 +363,49 @@ wp 58 0 0 0 0 0 0 0 0
 wp 59 0 0 0 0 0 0 0 0
 
 # osd_layout
-osd_layout 0 0 2 1 V
-osd_layout 0 1 13 14 V
+osd_layout 0 0 13 1 V
+osd_layout 0 1 1 11 V
 osd_layout 0 2 0 0 V
 osd_layout 0 3 8 6 V
-osd_layout 0 4 8 6 V
+osd_layout 0 4 8 6 H
 osd_layout 0 5 23 8 H
 osd_layout 0 6 23 9 H
-osd_layout 0 7 13 12 V
+osd_layout 0 7 24 3 V
 osd_layout 0 8 20 2 H
-osd_layout 0 9 1 2 V
+osd_layout 0 9 1 3 H
 osd_layout 0 10 22 1 V
-osd_layout 0 11 2 3 V
-osd_layout 0 12 1 4 V
-osd_layout 0 13 25 7 V
-osd_layout 0 14 1 11 V
-osd_layout 0 15 25 6 V
+osd_layout 0 11 2 10 V
+osd_layout 0 12 0 4 V
+osd_layout 0 13 25 9 V
+osd_layout 0 14 2 2 V
+osd_layout 0 15 25 5 V
 osd_layout 0 16 2 10 H
 osd_layout 0 17 2 11 H
 osd_layout 0 18 2 12 H
 osd_layout 0 19 15 1 H
-osd_layout 0 20 18 12 H
-osd_layout 0 21 0 12 H
-osd_layout 0 22 14 2 V
-osd_layout 0 23 1 12 V
+osd_layout 0 20 16 15 H
+osd_layout 0 21 3 14 H
+osd_layout 0 22 14 11 V
+osd_layout 0 23 2 14 V
 osd_layout 0 24 12 2 H
 osd_layout 0 25 23 5 H
-osd_layout 0 26 24 7 H
-osd_layout 0 27 3 5 H
-osd_layout 0 28 23 11 V
+osd_layout 0 26 24 7 V
+osd_layout 0 27 24 10 V
+osd_layout 0 28 23 14 V
 osd_layout 0 29 23 12 H
 osd_layout 0 30 2 13 V
-osd_layout 0 31 0 10 H
-osd_layout 0 32 12 1 H
-osd_layout 0 33 6 2 H
-osd_layout 0 34 10 1 V
-osd_layout 0 35 1 5 H
+osd_layout 0 31 1 0 H
+osd_layout 0 32 1 12 V
+osd_layout 0 33 1 3 V
+osd_layout 0 34 10 2 V
+osd_layout 0 35 1 5 V
 osd_layout 0 36 1 5 H
 osd_layout 0 37 1 6 H
 osd_layout 0 38 1 7 H
 osd_layout 0 39 1 5 H
-osd_layout 0 40 7 12 V
-osd_layout 0 41 1 8 V
-osd_layout 0 42 1 7 V
+osd_layout 0 40 8 14 V
+osd_layout 0 41 2 8 V
+osd_layout 0 42 2 7 V
 osd_layout 0 43 0 0 H
 osd_layout 0 44 0 0 H
 osd_layout 0 45 0 0 H
@@ -459,7 +459,7 @@ osd_layout 0 92 19 8 H
 osd_layout 0 93 19 9 H
 osd_layout 0 94 19 10 H
 osd_layout 0 95 19 11 H
-osd_layout 0 96 0 0 H
+osd_layout 0 96 25 6 V
 osd_layout 0 97 0 12 H
 osd_layout 0 98 0 0 H
 osd_layout 0 99 0 0 H
@@ -468,52 +468,52 @@ osd_layout 0 101 12 5 H
 osd_layout 0 102 12 6 H
 osd_layout 0 103 12 7 H
 osd_layout 0 104 0 0 H
-osd_layout 0 105 3 5 H
+osd_layout 0 105 28 2 H
 osd_layout 0 106 1 2 H
 osd_layout 0 107 1 3 H
-osd_layout 1 0 23 0 H
-osd_layout 1 1 12 0 H
-osd_layout 1 2 0 0 H
-osd_layout 1 3 8 6 H
+osd_layout 1 0 13 1 V
+osd_layout 1 1 1 11 V
+osd_layout 1 2 0 0 V
+osd_layout 1 3 8 6 V
 osd_layout 1 4 8 6 H
 osd_layout 1 5 23 8 H
 osd_layout 1 6 23 9 H
-osd_layout 1 7 13 12 H
+osd_layout 1 7 24 3 H
 osd_layout 1 8 20 2 H
-osd_layout 1 9 1 2 H
-osd_layout 1 10 8 6 H
-osd_layout 1 11 2 3 H
-osd_layout 1 12 1 4 H
-osd_layout 1 13 23 1 H
-osd_layout 1 14 0 11 H
-osd_layout 1 15 1 0 H
+osd_layout 1 9 1 3 H
+osd_layout 1 10 10 1 H
+osd_layout 1 11 1 10 V
+osd_layout 1 12 0 4 V
+osd_layout 1 13 25 9 V
+osd_layout 1 14 2 2 H
+osd_layout 1 15 25 5 V
 osd_layout 1 16 2 10 H
 osd_layout 1 17 2 11 H
 osd_layout 1 18 2 12 H
 osd_layout 1 19 15 1 H
-osd_layout 1 20 18 12 H
-osd_layout 1 21 0 12 H
-osd_layout 1 22 14 11 H
-osd_layout 1 23 1 1 H
+osd_layout 1 20 16 15 H
+osd_layout 1 21 3 14 H
+osd_layout 1 22 14 11 V
+osd_layout 1 23 2 14 V
 osd_layout 1 24 12 2 H
 osd_layout 1 25 23 5 H
 osd_layout 1 26 24 7 H
 osd_layout 1 27 3 5 H
-osd_layout 1 28 23 11 H
+osd_layout 1 28 23 14 V
 osd_layout 1 29 23 12 H
-osd_layout 1 30 1 13 H
-osd_layout 1 31 0 10 H
-osd_layout 1 32 12 1 H
-osd_layout 1 33 6 2 H
-osd_layout 1 34 18 2 H
+osd_layout 1 30 2 13 V
+osd_layout 1 31 1 0 H
+osd_layout 1 32 1 12 V
+osd_layout 1 33 1 3 H
+osd_layout 1 34 10 2 V
 osd_layout 1 35 1 5 H
 osd_layout 1 36 1 5 H
 osd_layout 1 37 1 6 H
 osd_layout 1 38 1 7 H
 osd_layout 1 39 1 5 H
-osd_layout 1 40 1 2 H
-osd_layout 1 41 1 8 H
-osd_layout 1 42 1 7 H
+osd_layout 1 40 8 14 H
+osd_layout 1 41 2 8 H
+osd_layout 1 42 2 7 H
 osd_layout 1 43 0 0 H
 osd_layout 1 44 0 0 H
 osd_layout 1 45 0 0 H
@@ -557,8 +557,8 @@ osd_layout 1 82 2 12 H
 osd_layout 1 83 2 12 H
 osd_layout 1 84 2 12 H
 osd_layout 1 85 23 1 H
-osd_layout 1 86 19 2 H
-osd_layout 1 87 19 3 H
+osd_layout 1 86 24 12 V
+osd_layout 1 87 24 11 V
 osd_layout 1 88 19 4 H
 osd_layout 1 89 19 5 H
 osd_layout 1 90 19 6 H
@@ -579,49 +579,49 @@ osd_layout 1 104 0 0 H
 osd_layout 1 105 3 5 H
 osd_layout 1 106 1 2 H
 osd_layout 1 107 1 3 H
-osd_layout 2 0 23 0 H
-osd_layout 2 1 12 0 H
+osd_layout 2 0 13 1 V
+osd_layout 2 1 1 11 V
 osd_layout 2 2 0 0 H
 osd_layout 2 3 8 6 H
 osd_layout 2 4 8 6 H
 osd_layout 2 5 23 8 H
 osd_layout 2 6 23 9 H
-osd_layout 2 7 13 12 H
+osd_layout 2 7 24 3 H
 osd_layout 2 8 20 2 H
-osd_layout 2 9 1 2 H
-osd_layout 2 10 8 6 H
-osd_layout 2 11 2 3 H
-osd_layout 2 12 1 4 H
-osd_layout 2 13 23 1 H
-osd_layout 2 14 0 11 H
-osd_layout 2 15 1 0 H
-osd_layout 2 16 2 10 H
-osd_layout 2 17 2 11 H
+osd_layout 2 9 1 3 H
+osd_layout 2 10 10 1 H
+osd_layout 2 11 2 10 H
+osd_layout 2 12 0 4 H
+osd_layout 2 13 25 9 H
+osd_layout 2 14 2 2 H
+osd_layout 2 15 25 5 H
+osd_layout 2 16 7 10 V
+osd_layout 2 17 7 11 V
 osd_layout 2 18 2 12 H
 osd_layout 2 19 15 1 H
-osd_layout 2 20 18 12 H
-osd_layout 2 21 0 12 H
+osd_layout 2 20 16 15 H
+osd_layout 2 21 3 14 H
 osd_layout 2 22 14 11 H
-osd_layout 2 23 1 1 H
+osd_layout 2 23 2 14 H
 osd_layout 2 24 12 2 H
 osd_layout 2 25 23 5 H
 osd_layout 2 26 24 7 H
-osd_layout 2 27 3 5 H
-osd_layout 2 28 23 11 H
+osd_layout 2 27 24 10 V
+osd_layout 2 28 23 13 H
 osd_layout 2 29 23 12 H
-osd_layout 2 30 1 13 H
-osd_layout 2 31 0 10 H
+osd_layout 2 30 0 14 V
+osd_layout 2 31 1 0 H
 osd_layout 2 32 12 1 H
-osd_layout 2 33 6 2 H
-osd_layout 2 34 18 2 H
+osd_layout 2 33 1 3 H
+osd_layout 2 34 10 2 H
 osd_layout 2 35 1 5 H
 osd_layout 2 36 1 5 H
 osd_layout 2 37 1 6 H
 osd_layout 2 38 1 7 H
 osd_layout 2 39 1 5 H
-osd_layout 2 40 1 2 H
-osd_layout 2 41 1 8 H
-osd_layout 2 42 1 7 H
+osd_layout 2 40 8 14 H
+osd_layout 2 41 2 8 H
+osd_layout 2 42 2 7 H
 osd_layout 2 43 0 0 H
 osd_layout 2 44 0 0 H
 osd_layout 2 45 0 0 H
@@ -636,13 +636,13 @@ osd_layout 2 53 12 1 H
 osd_layout 2 54 12 1 H
 osd_layout 2 55 1 8 H
 osd_layout 2 56 2 12 H
-osd_layout 2 57 2 12 H
+osd_layout 2 57 7 8 V
 osd_layout 2 58 2 12 H
 osd_layout 2 59 2 12 H
 osd_layout 2 60 2 12 H
 osd_layout 2 61 2 12 H
-osd_layout 2 62 2 10 H
-osd_layout 2 63 2 11 H
+osd_layout 2 62 8 4 V
+osd_layout 2 63 8 3 V
 osd_layout 2 64 2 12 H
 osd_layout 2 65 2 12 H
 osd_layout 2 66 2 12 H
@@ -654,8 +654,8 @@ osd_layout 2 71 2 12 H
 osd_layout 2 72 2 12 H
 osd_layout 2 73 2 12 H
 osd_layout 2 74 2 12 H
-osd_layout 2 75 2 12 H
-osd_layout 2 76 2 12 H
+osd_layout 2 75 7 7 V
+osd_layout 2 76 7 6 V
 osd_layout 2 77 2 12 H
 osd_layout 2 78 0 0 H
 osd_layout 2 79 2 12 H
@@ -687,15 +687,15 @@ osd_layout 2 104 0 0 H
 osd_layout 2 105 3 5 H
 osd_layout 2 106 1 2 H
 osd_layout 2 107 1 3 H
-osd_layout 3 0 23 0 H
-osd_layout 3 1 12 0 H
+osd_layout 3 0 13 1 V
+osd_layout 3 1 1 11 V
 osd_layout 3 2 0 0 H
-osd_layout 3 3 8 6 H
+osd_layout 3 3 8 6 V
 osd_layout 3 4 8 6 H
 osd_layout 3 5 23 8 H
 osd_layout 3 6 23 9 H
 osd_layout 3 7 13 12 H
-osd_layout 3 8 20 2 H
+osd_layout 3 8 14 14 V
 osd_layout 3 9 1 2 H
 osd_layout 3 10 8 6 H
 osd_layout 3 11 2 3 H
@@ -717,7 +717,7 @@ osd_layout 3 26 24 7 H
 osd_layout 3 27 3 5 H
 osd_layout 3 28 23 11 H
 osd_layout 3 29 23 12 H
-osd_layout 3 30 1 13 H
+osd_layout 3 30 1 13 V
 osd_layout 3 31 0 10 H
 osd_layout 3 32 12 1 H
 osd_layout 3 33 6 2 H
@@ -929,7 +929,7 @@ set small_angle = 180
 set imu_acc_ignore_rate = 10
 set imu_acc_ignore_slope = 0
 set fixed_wing_auto_arm = OFF
-set disarm_kill_switch = ON
+set disarm_kill_switch = OFF
 set switch_disarm_delay = 250
 set applied_defaults = 3
 set rpm_gyro_filter_enabled = OFF
@@ -997,11 +997,11 @@ set nav_overrides_motor_stop = ON
 set nav_rth_climb_first = ON
 set nav_rth_climb_ignore_emerg = OFF
 set nav_rth_tail_first = OFF
-set nav_rth_allow_landing = ALWAYS
+set nav_rth_allow_landing = FS_ONLY
 set nav_rth_alt_mode = AT_LEAST
 set nav_rth_abort_threshold = 50000
 set nav_max_terrain_follow_alt = 100
-set nav_rth_altitude = 1000
+set nav_rth_altitude = 5000
 set nav_rth_home_altitude = 0
 set nav_rth_home_offset_distance = 0
 set nav_rth_home_offset_direction = 0
@@ -1018,14 +1018,14 @@ set nav_mc_braking_boost_disengage_speed = 100
 set nav_mc_braking_bank_angle = 40
 set nav_mc_pos_deceleration_time = 120
 set nav_mc_pos_expo = 10
-set nav_fw_cruise_thr = 1400
+set nav_fw_cruise_thr = 1470
 set nav_fw_min_thr = 1200
 set nav_fw_max_thr = 1700
-set nav_fw_bank_angle = 35
-set nav_fw_climb_angle = 20
-set nav_fw_dive_angle = 15
+set nav_fw_bank_angle = 45
+set nav_fw_climb_angle = 30
+set nav_fw_dive_angle = 20
 set nav_fw_pitch2thr = 10
-set nav_fw_loiter_radius = 5000
+set nav_fw_loiter_radius = 6000
 set nav_fw_cruise_speed = 0
 set nav_fw_control_smoothness = 0
 set nav_fw_land_dive_angle = 2
@@ -1095,7 +1095,7 @@ set osd_baro_temp_alarm_max = 600
 set osd_temp_label_align = LEFT
 set osd_artificial_horizon_reverse_roll = OFF
 set osd_artificial_horizon_max_pitch = 20
-set osd_crosshairs_style = DEFAULT
+set osd_crosshairs_style = AIRCRAFT
 set osd_horizon_offset = 0
 set osd_camera_uptilt = 0
 set osd_camera_fov_h = 135
@@ -1168,8 +1168,8 @@ set fw_ff_yaw = 60
 set fw_p_level = 20
 set fw_i_level = 5
 set fw_d_level = 75
-set max_angle_inclination_rll = 300
-set max_angle_inclination_pit = 300
+set max_angle_inclination_rll = 600
+set max_angle_inclination_pit = 600
 set dterm_lpf_hz = 40
 set dterm_lpf_type = BIQUAD
 set dterm_lpf2_hz = 0
@@ -1181,7 +1181,7 @@ set fw_iterm_throw_limit = 165
 set fw_loiter_direction = RIGHT
 set fw_reference_airspeed =  1000.000
 set fw_turn_assist_yaw_gain =  1.000
-set fw_iterm_limit_stick_position =  0.500
+set fw_iterm_limit_stick_position =  0.250
 set dterm_notch_hz = 0
 set dterm_notch_cutoff = 1
 set pidsum_limit = 500
@@ -1227,7 +1227,7 @@ set thr_expo = 0
 set tpa_rate = 30
 set tpa_breakpoint = 1550
 set fw_tpa_time_constant = 0
-set rc_expo = 70
+set rc_expo = 30
 set rc_yaw_expo = 20
 set roll_rate = 26
 set pitch_rate = 14
