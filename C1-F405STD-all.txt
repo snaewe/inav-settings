@@ -29,7 +29,7 @@ servo 0 1000 2000 1500 100
 servo 1 1000 2000 1500 100
 servo 2 1000 2000 1500 100
 servo 3 1000 2000 1500 -100
-servo 4 1000 2000 1500 100
+servo 4 1000 2000 1416 100
 servo 5 1000 2000 1500 100
 servo 6 1000 2000 1500 100
 servo 7 1000 2000 1500 100
@@ -107,7 +107,6 @@ feature TELEMETRY
 feature CURRENT_METER
 feature LED_STRIP
 feature BLACKBOX
-feature AIRMODE
 feature PWM_OUTPUT_ENABLE
 feature OSD
 
@@ -800,7 +799,7 @@ osd_layout 3 107 1 3 H
 set looptime = 1000
 set gyro_sync = ON
 set align_gyro = DEFAULT
-set gyro_hardware_lpf = 256HZ
+set gyro_hardware_lpf = 188HZ
 set gyro_lpf_hz = 35
 set gyro_lpf_type = BIQUAD
 set moron_threshold = 32
@@ -848,7 +847,7 @@ set align_mag_yaw = 0
 set baro_hardware = BMP280
 set baro_median_filter = ON
 set baro_cal_tolerance = 150
-set pitot_hardware = NONE
+set pitot_hardware = VIRTUAL
 set pitot_lpf_milli_hz = 350
 set pitot_scale =  1.000
 set receiver_type = SERIAL
@@ -894,7 +893,7 @@ set failsafe_min_distance = 0
 set failsafe_min_distance_procedure = DROP
 set failsafe_mission = ON
 set align_board_roll = 0
-set align_board_pitch = 40
+set align_board_pitch = 35
 set align_board_yaw = 0
 set vbat_meter_type = ADC
 set vbat_scale = 1100
