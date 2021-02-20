@@ -1,11 +1,11 @@
-# version
-# INAV/OMNIBUSF4V3 2.3.0 Nov 24 2019 / 10:44:54 (d0bdd38c0)
-# GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
+version
+# INAV/OMNIBUSF4V3 2.5.2 Aug  4 2020 / 10:05:34 (faaedc7cb)
+# GCC-9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599]
 
 # status
-System Uptime: 297 seconds
-Current Time: 2041-06-28T01:04:00.000+00:00
-Voltage: 16.01V (4S battery - OK)
+System Uptime: 133 seconds
+Current Time: 2021-02-20T12:32:36.860+00:00
+Voltage: 0.11V (1S battery - NOT PRESENT)
 CPU Clock=168MHz, GYRO=MPU6000, ACC=MPU6000, BARO=BMP280
 STM32 system clocks:
   SYSCLK = 168 MHz
@@ -16,20 +16,21 @@ Sensor status: GYRO=OK, ACC=OK, MAG=NONE, BARO=OK, RANGEFINDER=NONE, OPFLOW=NONE
 SD card: Manufacturer 0x1b, 1954816kB, 09/2012, v1.0, '00000'
 Filesystem: Ready
 Stack size: 6144, Stack address: 0x10010000, Heap available: 1728
-I2C Errors: 0, config size: 5621, max available config: 131072
+I2C Errors: 0, config size: 5781, max available config: 131072
 ADC channel usage:
    BATTERY : configured = ADC 2, used = ADC 2
       RSSI : configured = ADC 3, used = none
    CURRENT : configured = ADC 1, used = ADC 1
   AIRSPEED : configured = none, used = none
-System load: 3, cycle time: 1006, PID rate: 994, RX rate: 49, System rate: 9
-Arming disabled flags: NAV RX CLI AUTOTRIM
+System load: 2, cycle time: 1001, PID rate: 999, RX rate: 648, System rate: 10
+Arming disabled flags: NAV CLI
+VTX: not detected
 
 # dump all
 
 # version
-# INAV/OMNIBUSF4V3 2.3.0 Nov 24 2019 / 10:44:54 (d0bdd38c0)
-# GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
+# INAV/OMNIBUSF4V3 2.5.2 Aug  4 2020 / 10:05:34 (faaedc7cb)
+# GCC-9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599]
 
 # start the command batch
 batch start
@@ -70,22 +71,28 @@ servo 14 1000 2000 1500 100
 servo 15 1000 2000 1500 100
 
 # logic
-logic 0 0 0 0 0 0 0 0
-logic 1 0 0 0 0 0 0 0
-logic 2 0 0 0 0 0 0 0
-logic 3 0 0 0 0 0 0 0
-logic 4 0 0 0 0 0 0 0
-logic 5 0 0 0 0 0 0 0
-logic 6 0 0 0 0 0 0 0
-logic 7 0 0 0 0 0 0 0
-logic 8 0 0 0 0 0 0 0
-logic 9 0 0 0 0 0 0 0
-logic 10 0 0 0 0 0 0 0
-logic 11 0 0 0 0 0 0 0
-logic 12 0 0 0 0 0 0 0
-logic 13 0 0 0 0 0 0 0
-logic 14 0 0 0 0 0 0 0
-logic 15 0 0 0 0 0 0 0
+logic 0 0 -1 0 0 0 0 0 0
+logic 1 0 -1 0 0 0 0 0 0
+logic 2 0 -1 0 0 0 0 0 0
+logic 3 0 -1 0 0 0 0 0 0
+logic 4 0 -1 0 0 0 0 0 0
+logic 5 0 -1 0 0 0 0 0 0
+logic 6 0 -1 0 0 0 0 0 0
+logic 7 0 -1 0 0 0 0 0 0
+logic 8 0 -1 0 0 0 0 0 0
+logic 9 0 -1 0 0 0 0 0 0
+logic 10 0 -1 0 0 0 0 0 0
+logic 11 0 -1 0 0 0 0 0 0
+logic 12 0 -1 0 0 0 0 0 0
+logic 13 0 -1 0 0 0 0 0 0
+logic 14 0 -1 0 0 0 0 0 0
+logic 15 0 -1 0 0 0 0 0 0
+
+# gvar
+gvar 0 0 -32768 32767
+gvar 1 0 -32768 32767
+gvar 2 0 -32768 32767
+gvar 3 0 -32768 32767
 
 # gf
 gf 0 0 0 0 0 0 0
@@ -103,12 +110,12 @@ feature -VBAT
 feature -TX_PROF_SEL
 feature -BAT_PROF_AUTOSWITCH
 feature -MOTOR_STOP
-feature -DYNAMIC_FILTERS
 feature -SOFTSERIAL
 feature -GPS
+feature -RPM_FILTERS
 feature -TELEMETRY
 feature -CURRENT_METER
-feature -3D
+feature -REVERSIBLE_MOTORS
 feature -RSSI_ADC
 feature -LED_STRIP
 feature -DASHBOARD
@@ -117,7 +124,6 @@ feature -TRANSPONDER
 feature -AIRMODE
 feature -SUPEREXPO
 feature -VTX
-feature -PWM_SERVO_DRIVER
 feature -PWM_OUTPUT_ENABLE
 feature -OSD
 feature -FW_LAUNCH
@@ -127,7 +133,7 @@ feature SOFTSERIAL
 feature GPS
 feature TELEMETRY
 feature CURRENT_METER
-feature AIRMODE
+feature BLACKBOX
 feature PWM_OUTPUT_ENABLE
 feature OSD
 
@@ -267,20 +273,20 @@ mode_color 6 9 0
 mode_color 6 10 0
 
 # aux
-aux 0 0 0 1700 2100		#  0 =>  0 (ARM)
-aux 1 2 1 1700 2100		#  2 =>  2 (HORIZON)
-aux 2 3 4 1300 2100		#  3 =>  3 (NAV ALTHOLD)
-aux 3 11 2 1300 1700		#  9 => 11 (NAV POSHOLD)
-aux 4 10 2 1700 2100		#  8 => 10 (NAV RTH)
-aux 5 28 7 1700 2100		# 19 => 28 (NAV WP)
-aux 6 45 4 1700 2100		# 35 => 45 (NAV CRUISE)
-aux 7 12 1 900 1300		# 10 => 12 (MANUAL)
-aux 8 36 7 1300 1700		# 14 => 36 (NAV LAUNCH)
-aux 9 37 6 1300 1675		# 27 => 37 (SERVO AUTOTRIM)
-aux 10 21 6 1725 2100		# 28 => 21 (AUTO TUNE)
-aux 11 42 5 1300 1700		# 32 => 42 (OSD ALT 1)
-aux 12 43 8 1175 2100		# 33 => 43 (OSD ALT 2)
-aux 13 44 5 1700 2100		# 34 => 44 (OSD ALT 3)
+aux 0 0 0 1700 2100
+aux 1 2 1 1700 2100
+aux 2 3 4 1300 2100
+aux 3 11 2 1300 1700
+aux 4 10 2 1700 2100
+aux 5 28 7 1700 2100
+aux 6 45 4 1700 2100
+aux 7 12 1 900 1300
+aux 8 36 7 1300 1700
+aux 9 37 6 1300 1675
+aux 10 21 6 1725 2100
+aux 11 42 5 1300 1700
+aux 12 43 8 1175 2100
+aux 13 44 5 1700 2100
 aux 14 0 0 900 900
 aux 15 0 0 900 900
 aux 16 0 0 900 900
@@ -320,66 +326,66 @@ temp_sensor 7 0 0 0 0 0
 
 # wp
 #wp 0 invalid
-wp 0 0 0 0 0 0 0
-wp 1 0 0 0 0 0 0
-wp 2 0 0 0 0 0 0
-wp 3 0 0 0 0 0 0
-wp 4 0 0 0 0 0 0
-wp 5 0 0 0 0 0 0
-wp 6 0 0 0 0 0 0
-wp 7 0 0 0 0 0 0
-wp 8 0 0 0 0 0 0
-wp 9 0 0 0 0 0 0
-wp 10 0 0 0 0 0 0
-wp 11 0 0 0 0 0 0
-wp 12 0 0 0 0 0 0
-wp 13 0 0 0 0 0 0
-wp 14 0 0 0 0 0 0
-wp 15 0 0 0 0 0 0
-wp 16 0 0 0 0 0 0
-wp 17 0 0 0 0 0 0
-wp 18 0 0 0 0 0 0
-wp 19 0 0 0 0 0 0
-wp 20 0 0 0 0 0 0
-wp 21 0 0 0 0 0 0
-wp 22 0 0 0 0 0 0
-wp 23 0 0 0 0 0 0
-wp 24 0 0 0 0 0 0
-wp 25 0 0 0 0 0 0
-wp 26 0 0 0 0 0 0
-wp 27 0 0 0 0 0 0
-wp 28 0 0 0 0 0 0
-wp 29 0 0 0 0 0 0
-wp 30 0 0 0 0 0 0
-wp 31 0 0 0 0 0 0
-wp 32 0 0 0 0 0 0
-wp 33 0 0 0 0 0 0
-wp 34 0 0 0 0 0 0
-wp 35 0 0 0 0 0 0
-wp 36 0 0 0 0 0 0
-wp 37 0 0 0 0 0 0
-wp 38 0 0 0 0 0 0
-wp 39 0 0 0 0 0 0
-wp 40 0 0 0 0 0 0
-wp 41 0 0 0 0 0 0
-wp 42 0 0 0 0 0 0
-wp 43 0 0 0 0 0 0
-wp 44 0 0 0 0 0 0
-wp 45 0 0 0 0 0 0
-wp 46 0 0 0 0 0 0
-wp 47 0 0 0 0 0 0
-wp 48 0 0 0 0 0 0
-wp 49 0 0 0 0 0 0
-wp 50 0 0 0 0 0 0
-wp 51 0 0 0 0 0 0
-wp 52 0 0 0 0 0 0
-wp 53 0 0 0 0 0 0
-wp 54 0 0 0 0 0 0
-wp 55 0 0 0 0 0 0
-wp 56 0 0 0 0 0 0
-wp 57 0 0 0 0 0 0
-wp 58 0 0 0 0 0 0
-wp 59 0 0 0 0 0 0
+wp 0 0 0 0 0 0 0 0 0
+wp 1 0 0 0 0 0 0 0 0
+wp 2 0 0 0 0 0 0 0 0
+wp 3 0 0 0 0 0 0 0 0
+wp 4 0 0 0 0 0 0 0 0
+wp 5 0 0 0 0 0 0 0 0
+wp 6 0 0 0 0 0 0 0 0
+wp 7 0 0 0 0 0 0 0 0
+wp 8 0 0 0 0 0 0 0 0
+wp 9 0 0 0 0 0 0 0 0
+wp 10 0 0 0 0 0 0 0 0
+wp 11 0 0 0 0 0 0 0 0
+wp 12 0 0 0 0 0 0 0 0
+wp 13 0 0 0 0 0 0 0 0
+wp 14 0 0 0 0 0 0 0 0
+wp 15 0 0 0 0 0 0 0 0
+wp 16 0 0 0 0 0 0 0 0
+wp 17 0 0 0 0 0 0 0 0
+wp 18 0 0 0 0 0 0 0 0
+wp 19 0 0 0 0 0 0 0 0
+wp 20 0 0 0 0 0 0 0 0
+wp 21 0 0 0 0 0 0 0 0
+wp 22 0 0 0 0 0 0 0 0
+wp 23 0 0 0 0 0 0 0 0
+wp 24 0 0 0 0 0 0 0 0
+wp 25 0 0 0 0 0 0 0 0
+wp 26 0 0 0 0 0 0 0 0
+wp 27 0 0 0 0 0 0 0 0
+wp 28 0 0 0 0 0 0 0 0
+wp 29 0 0 0 0 0 0 0 0
+wp 30 0 0 0 0 0 0 0 0
+wp 31 0 0 0 0 0 0 0 0
+wp 32 0 0 0 0 0 0 0 0
+wp 33 0 0 0 0 0 0 0 0
+wp 34 0 0 0 0 0 0 0 0
+wp 35 0 0 0 0 0 0 0 0
+wp 36 0 0 0 0 0 0 0 0
+wp 37 0 0 0 0 0 0 0 0
+wp 38 0 0 0 0 0 0 0 0
+wp 39 0 0 0 0 0 0 0 0
+wp 40 0 0 0 0 0 0 0 0
+wp 41 0 0 0 0 0 0 0 0
+wp 42 0 0 0 0 0 0 0 0
+wp 43 0 0 0 0 0 0 0 0
+wp 44 0 0 0 0 0 0 0 0
+wp 45 0 0 0 0 0 0 0 0
+wp 46 0 0 0 0 0 0 0 0
+wp 47 0 0 0 0 0 0 0 0
+wp 48 0 0 0 0 0 0 0 0
+wp 49 0 0 0 0 0 0 0 0
+wp 50 0 0 0 0 0 0 0 0
+wp 51 0 0 0 0 0 0 0 0
+wp 52 0 0 0 0 0 0 0 0
+wp 53 0 0 0 0 0 0 0 0
+wp 54 0 0 0 0 0 0 0 0
+wp 55 0 0 0 0 0 0 0 0
+wp 56 0 0 0 0 0 0 0 0
+wp 57 0 0 0 0 0 0 0 0
+wp 58 0 0 0 0 0 0 0 0
+wp 59 0 0 0 0 0 0 0 0
 
 # osd_layout
 osd_layout 0 0 13 1 V
@@ -489,6 +495,7 @@ osd_layout 0 103 12 7 H
 osd_layout 0 104 0 0 H
 osd_layout 0 105 3 5 H
 osd_layout 0 106 1 2 H
+osd_layout 0 107 1 3 H
 osd_layout 1 0 13 1 V
 osd_layout 1 1 1 11 V
 osd_layout 1 2 0 0 H
@@ -596,6 +603,7 @@ osd_layout 1 103 12 7 H
 osd_layout 1 104 0 0 H
 osd_layout 1 105 3 5 H
 osd_layout 1 106 1 2 H
+osd_layout 1 107 1 3 H
 osd_layout 2 0 23 0 H
 osd_layout 2 1 12 0 H
 osd_layout 2 2 0 0 V
@@ -703,6 +711,7 @@ osd_layout 2 103 12 7 H
 osd_layout 2 104 0 0 H
 osd_layout 2 105 3 5 H
 osd_layout 2 106 1 2 H
+osd_layout 2 107 1 3 H
 osd_layout 3 0 13 1 V
 osd_layout 3 1 1 11 V
 osd_layout 3 2 0 0 H
@@ -810,6 +819,7 @@ osd_layout 3 103 12 7 H
 osd_layout 3 104 0 0 H
 osd_layout 3 105 3 5 H
 osd_layout 3 106 1 2 H
+osd_layout 3 107 1 3 H
 
 # master
 set looptime = 1000
@@ -824,10 +834,11 @@ set gyro_notch1_cutoff = 1
 set gyro_notch2_hz = 0
 set gyro_notch2_cutoff = 1
 set gyro_stage2_lowpass_hz = 0
-set dyn_notch_width_percent = 8
-set dyn_notch_range = MEDIUM
-set dyn_notch_q = 120
-set dyn_notch_min_hz = 150
+set gyro_stage2_lowpass_type = BIQUAD
+set dynamic_gyro_notch_enabled = OFF
+set dynamic_gyro_notch_range = MEDIUM
+set dynamic_gyro_notch_q = 120
+set dynamic_gyro_notch_min_hz = 150
 set vbat_adc_channel = 2
 set rssi_adc_channel = 3
 set current_adc_channel = 1
@@ -869,7 +880,7 @@ set receiver_type = SERIAL
 set min_check = 1100
 set max_check = 1900
 set rssi_source = PROTOCOL
-set rssi_channel = 16
+set rssi_channel = 0
 set rssi_min = 0
 set rssi_max = 50
 set sbus_sync_interval = 3000
@@ -885,7 +896,6 @@ set blackbox_rate_num = 1
 set blackbox_rate_denom = 1
 set blackbox_device = SDCARD
 set sdcard_detect_inverted = ON
-set min_throttle = 1060
 set max_throttle = 2000
 set min_command = 1000
 set motor_pwm_rate = 4000
@@ -893,6 +903,7 @@ set motor_accel_time = 0
 set motor_decel_time = 0
 set motor_pwm_protocol = DSHOT150
 set throttle_scale =  1.000
+set throttle_idle =  8.000
 set motor_poles = 14
 set failsafe_delay = 5
 set failsafe_recovery_delay = 5
@@ -907,8 +918,8 @@ set failsafe_fw_yaw_rate = -45
 set failsafe_min_distance = 0
 set failsafe_min_distance_procedure = DROP
 set failsafe_mission = ON
-set align_board_roll = -35
-set align_board_pitch = -5
+set align_board_roll = -20
+set align_board_pitch = 0
 set align_board_yaw = 900
 set vbat_meter_type = ADC
 set vbat_scale = 1100
@@ -920,8 +931,7 @@ set cruise_power = 0
 set idle_power = 0
 set rth_energy_margin = 5
 set thr_comp_weight =  1.000
-set yaw_motor_direction = 1
-set yaw_jump_prevention_limit = 350
+set motor_direction_inverted = OFF
 set platform_type = AIRPLANE
 set has_flaps = OFF
 set model_preview_type = 30
@@ -929,8 +939,9 @@ set fw_min_throttle_down_pitch = 0
 set 3d_deadband_low = 1425
 set 3d_deadband_high = 1514
 set 3d_neutral = 1475
+set servo_protocol = PWM
 set servo_center_pulse = 1500
-set servo_pwm_rate = 100
+set servo_pwm_rate = 50
 set servo_lpf_hz = 20
 set flaperon_throw_offset = 200
 set tri_unarmed_servo = ON
@@ -946,6 +957,10 @@ set fixed_wing_auto_arm = OFF
 set disarm_kill_switch = ON
 set switch_disarm_delay = 250
 set applied_defaults = 1
+set rpm_gyro_filter_enabled = OFF
+set rpm_gyro_harmonics = 1
+set rpm_gyro_min_hz = 100
+set rpm_gyro_q = 500
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
 set gps_dyn_model = AIR_1G
@@ -1013,6 +1028,8 @@ set nav_rth_abort_threshold = 50000
 set nav_max_terrain_follow_alt = 100
 set nav_rth_altitude = 7000
 set nav_rth_home_altitude = 0
+set nav_rth_home_offset_distance = 0
+set nav_rth_home_offset_direction = 0
 set nav_mc_bank_angle = 30
 set nav_mc_hover_thr = 1500
 set nav_mc_auto_disarm_delay = 2000
@@ -1035,6 +1052,7 @@ set nav_fw_dive_angle = 20
 set nav_fw_pitch2thr = 10
 set nav_fw_loiter_radius = 6000
 set nav_fw_cruise_speed = 0
+set nav_fw_control_smoothness = 0
 set nav_fw_land_dive_angle = 2
 set nav_fw_launch_velocity = 300
 set nav_fw_launch_accel = 1863
@@ -1050,6 +1068,8 @@ set nav_fw_launch_max_altitude = 0
 set nav_fw_launch_climb_angle = 18
 set nav_fw_cruise_yaw_rate = 20
 set nav_fw_allow_manual_thr_increase = ON
+set nav_use_fw_yaw_control = OFF
+set nav_fw_yaw_deadband = 0
 set telemetry_switch = OFF
 set telemetry_inverted = OFF
 set frsky_default_latitude =  0.000
@@ -1060,7 +1080,7 @@ set frsky_vfas_precision = 0
 set frsky_pitch_roll = OFF
 set report_cell_voltage = OFF
 set hott_alarm_sound_interval = 5
-set telemetry_uart_unidir = OFF
+set telemetry_halfduplex = ON
 set smartport_fuel_unit = MAH
 set ibus_telemetry_type = 0
 set ltm_update_rate = NORMAL
@@ -1093,6 +1113,8 @@ set osd_gforce_axis_alarm_min =  0.000
 set osd_gforce_axis_alarm_max =  0.000
 set osd_imu_temp_alarm_min = -200
 set osd_imu_temp_alarm_max = 600
+set osd_esc_temp_alarm_max = 900
+set osd_esc_temp_alarm_min = -200
 set osd_baro_temp_alarm_min = -200
 set osd_baro_temp_alarm_max = 600
 set osd_temp_label_align = LEFT
@@ -1111,6 +1133,7 @@ set osd_hud_radar_disp = 0
 set osd_hud_radar_range_min = 10
 set osd_hud_radar_range_max = 4000
 set osd_hud_radar_nearest = 0
+set osd_hud_wp_disp = 0
 set osd_left_sidebar_scroll = GROUND_SPEED
 set osd_right_sidebar_scroll = ALTITUDE
 set osd_sidebar_scroll_arrows = OFF
@@ -1119,7 +1142,8 @@ set osd_coordinate_digits = 8
 set osd_estimations_wind_compensation = ON
 set osd_failsafe_switch_layout = OFF
 set osd_plus_code_digits = 11
-set i2c_speed = 400KHZ
+set osd_ahi_style = DEFAULT
+set i2c_speed = 800KHZ
 set debug_mode = NONE
 set throttle_tilt_comp_str = 0
 set name = NanoTalon
@@ -1136,10 +1160,11 @@ set vtx_band = 4
 set vtx_channel = 1
 set vtx_power = 1
 set vtx_low_power_disarm = OFF
-set vtx_freq = 5740
-set vtx_pit_mode_freq = 0
+set vtx_pit_mode_chan = 1
+set vtx_max_power_override = 0
 set log_level = ERROR
 set log_topics = 0
+set esc_sensor_listen_only = OFF
 
 # profile
 profile 1
@@ -1171,6 +1196,9 @@ set fw_d_level = 75
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
 set dterm_lpf_hz = 40
+set dterm_lpf_type = BIQUAD
+set dterm_lpf2_hz = 0
+set dterm_lpf2_type = BIQUAD
 set use_dterm_fir_filter = ON
 set yaw_lpf_hz = 0
 set dterm_setpoint_weight =  1.000
@@ -1182,7 +1210,7 @@ set fw_iterm_limit_stick_position =  0.500
 set dterm_notch_hz = 0
 set dterm_notch_cutoff = 1
 set pidsum_limit = 500
-set yaw_p_limit = 500
+set pidsum_limit_yaw = 350
 set iterm_windup = 50
 set rate_accel_limit_roll_pitch = 0
 set rate_accel_limit_yaw = 10000
@@ -1205,6 +1233,10 @@ set nav_fw_pos_xy_p = 75
 set nav_fw_pos_xy_i = 5
 set nav_fw_pos_xy_d = 8
 set nav_fw_heading_p = 60
+set nav_fw_pos_hdg_p = 30
+set nav_fw_pos_hdg_i = 2
+set nav_fw_pos_hdg_d = 0
+set nav_fw_pos_hdg_pidsum_limit = 350
 set mc_iterm_relax_type = SETPOINT
 set mc_iterm_relax = RP
 set mc_iterm_relax_cutoff = 15
@@ -1214,6 +1246,7 @@ set d_boost_gyro_delta_lpf_hz = 80
 set antigravity_gain =  1.000
 set antigravity_accelerator =  1.000
 set antigravity_cutoff_lpf_hz = 15
+set pid_type = AUTO
 set thr_mid = 50
 set thr_expo = 0
 set tpa_rate = 0
@@ -1261,6 +1294,9 @@ set fw_d_level = 75
 set max_angle_inclination_rll = 300
 set max_angle_inclination_pit = 300
 set dterm_lpf_hz = 40
+set dterm_lpf_type = BIQUAD
+set dterm_lpf2_hz = 0
+set dterm_lpf2_type = BIQUAD
 set use_dterm_fir_filter = ON
 set yaw_lpf_hz = 0
 set dterm_setpoint_weight =  1.000
@@ -1272,7 +1308,7 @@ set fw_iterm_limit_stick_position =  0.500
 set dterm_notch_hz = 0
 set dterm_notch_cutoff = 1
 set pidsum_limit = 500
-set yaw_p_limit = 500
+set pidsum_limit_yaw = 350
 set iterm_windup = 50
 set rate_accel_limit_roll_pitch = 0
 set rate_accel_limit_yaw = 10000
@@ -1295,6 +1331,10 @@ set nav_fw_pos_xy_p = 60
 set nav_fw_pos_xy_i = 5
 set nav_fw_pos_xy_d = 8
 set nav_fw_heading_p = 60
+set nav_fw_pos_hdg_p = 30
+set nav_fw_pos_hdg_i = 2
+set nav_fw_pos_hdg_d = 0
+set nav_fw_pos_hdg_pidsum_limit = 350
 set mc_iterm_relax_type = SETPOINT
 set mc_iterm_relax = RP
 set mc_iterm_relax_cutoff = 15
@@ -1304,6 +1344,7 @@ set d_boost_gyro_delta_lpf_hz = 80
 set antigravity_gain =  1.000
 set antigravity_accelerator =  1.000
 set antigravity_cutoff_lpf_hz = 15
+set pid_type = AUTO
 set thr_mid = 50
 set thr_expo = 0
 set tpa_rate = 0
@@ -1351,6 +1392,9 @@ set fw_d_level = 75
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
 set dterm_lpf_hz = 40
+set dterm_lpf_type = BIQUAD
+set dterm_lpf2_hz = 0
+set dterm_lpf2_type = BIQUAD
 set use_dterm_fir_filter = ON
 set yaw_lpf_hz = 0
 set dterm_setpoint_weight =  1.000
@@ -1362,7 +1406,7 @@ set fw_iterm_limit_stick_position =  0.500
 set dterm_notch_hz = 0
 set dterm_notch_cutoff = 1
 set pidsum_limit = 500
-set yaw_p_limit = 500
+set pidsum_limit_yaw = 350
 set iterm_windup = 50
 set rate_accel_limit_roll_pitch = 0
 set rate_accel_limit_yaw = 10000
@@ -1385,6 +1429,10 @@ set nav_fw_pos_xy_p = 50
 set nav_fw_pos_xy_i = 5
 set nav_fw_pos_xy_d = 8
 set nav_fw_heading_p = 60
+set nav_fw_pos_hdg_p = 30
+set nav_fw_pos_hdg_i = 2
+set nav_fw_pos_hdg_d = 0
+set nav_fw_pos_hdg_pidsum_limit = 350
 set mc_iterm_relax_type = SETPOINT
 set mc_iterm_relax = RP
 set mc_iterm_relax_cutoff = 15
@@ -1394,17 +1442,18 @@ set d_boost_gyro_delta_lpf_hz = 80
 set antigravity_gain =  1.000
 set antigravity_accelerator =  1.000
 set antigravity_cutoff_lpf_hz = 15
+set pid_type = AUTO
 set thr_mid = 50
 set thr_expo = 0
 set tpa_rate = 40
 set tpa_breakpoint = 1550
 set fw_tpa_time_constant = 0
-set rc_expo = 40
+set rc_expo = 30
 set rc_yaw_expo = 20
 set roll_rate = 24
 set pitch_rate = 18
 set yaw_rate = 9
-set manual_rc_expo = 65
+set manual_rc_expo = 30
 set manual_rc_yaw_expo = 20
 set manual_roll_rate = 80
 set manual_pitch_rate = 100
@@ -1417,8 +1466,8 @@ battery_profile 1
 set bat_cells = 0
 set vbat_cell_detect_voltage = 430
 set vbat_max_cell_voltage = 420
-set vbat_min_cell_voltage = 330
-set vbat_warning_cell_voltage = 350
+set vbat_min_cell_voltage = 310
+set vbat_warning_cell_voltage = 340
 set battery_capacity = 0
 set battery_capacity_warning = 0
 set battery_capacity_critical = 0
@@ -1456,3 +1505,5 @@ battery_profile 1
 
 # save configuration
 save
+
+# 
