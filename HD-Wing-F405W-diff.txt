@@ -7,6 +7,9 @@
 # start the command batch
 batch start
 
+# reset configuration to default settings
+defaults noreboot
+
 # resources
 
 # mixer
@@ -24,9 +27,9 @@ smix 6 5 4 10 0 0
 smix 7 6 5 -30 0 0
 
 # servo
-servo 3 1000 2000 1436 -100
-servo 4 1000 2000 1508 100
-servo 5 884 1810 1480 -100
+servo 3 1000 2000 1388 -100
+servo 4 1000 2000 1540 100
+servo 5 884 1810 1458 -100
 servo 6 1440 2150 1650 -100
 
 # logic
@@ -200,6 +203,7 @@ set applied_defaults = 1
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
 set gps_ublox_use_galileo = ON
+set inav_w_z_baro_p =  0.350
 set nav_rth_allow_landing = NEVER
 set nav_rth_altitude = 6000
 set nav_fw_max_thr = 1800
@@ -219,7 +223,7 @@ set name = HD Wing
 set tz_offset = 60
 set vtx_band = 2
 set vtx_channel = 4
-set vtx_power = 3
+set vtx_power = 2
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_freq = 5790
 
@@ -279,3 +283,5 @@ battery_profile 1
 
 # save configuration
 save
+
+# 
