@@ -54,19 +54,19 @@ serial 1 2 115200 115200 0 115200
 # mode_color
 
 # aux
-aux 0 0 0 900 1300
-aux 1 2 1 1700 2100
-aux 2 3 4 1300 2100
-aux 3 9 2 1300 1700
-aux 4 8 2 1700 2100
-aux 5 19 7 1700 2100
-aux 6 35 4 1700 2100
-aux 7 10 1 900 1300
-aux 8 14 7 1300 1700
-aux 9 27 6 1300 1700
-aux 10 28 6 1700 2100
-aux 11 32 5 1300 1700
-aux 12 34 5 1700 2100
+aux 0 0 0 900 1300		#  0 =>  0 (ARM)
+aux 1 2 1 1700 2100		#  2 =>  2 (HORIZON)
+aux 2 3 4 1300 2100		#  3 =>  3 (NAV ALTHOLD)
+aux 3 11 2 1300 1700		#  9 => 11 (NAV POSHOLD)
+aux 4 10 2 1700 2100		#  8 => 10 (NAV RTH)
+aux 5 28 7 1700 2100		# 19 => 28 (NAV WP)
+aux 6 45 4 1700 2100		# 35 => 45 (NAV CRUISE)
+aux 7 12 1 900 1300		# 10 => 12 (MANUAL)
+aux 8 36 7 1300 1700		# 14 => 36 (NAV LAUNCH)
+aux 9 37 6 1300 1700		# 27 => 37 (SERVO AUTOTRIM)
+aux 10 21 6 1700 2100		# 28 => 21 (AUTO TUNE)
+aux 11 42 5 1300 1700		# 32 => 42 (OSD ALT 1)
+aux 12 44 5 1700 2100		# 34 => 44 (OSD ALT 3)
 
 # adjrange
 
@@ -220,3 +220,4 @@ battery_profile 1
 save
 
 # 
+### inav 2.5 aux conversion by box2perm 2021-04-09T19:22:03.933Z ###
