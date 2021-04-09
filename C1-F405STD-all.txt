@@ -23,13 +23,14 @@ smix 0 3 0 50 0 -1
 smix 1 3 1 50 0 -1
 smix 2 4 0 -50 0 -1
 smix 3 4 1 50 0 -1
+smix 4 5 6 100 0 0
 
 # servo
 servo 0 1000 2000 1500 100
 servo 1 1000 2000 1500 100
 servo 2 1000 2000 1500 100
-servo 3 1000 2000 1500 -100
-servo 4 1000 2000 1416 100
+servo 3 1000 2000 1498 -100
+servo 4 1000 2000 1410 100
 servo 5 1000 2000 1500 100
 servo 6 1000 2000 1500 100
 servo 7 1000 2000 1500 100
@@ -43,7 +44,7 @@ servo 14 1000 2000 1500 100
 servo 15 1000 2000 1500 100
 
 # logic
-logic 0 0 -1 0 0 0 0 0 0
+logic 0 1 -1 1 3 4 0 0 0
 logic 1 0 -1 0 0 0 0 0 0
 logic 2 0 -1 0 0 0 0 0 0
 logic 3 0 -1 0 0 0 0 0 0
@@ -109,6 +110,7 @@ feature LED_STRIP
 feature BLACKBOX
 feature PWM_OUTPUT_ENABLE
 feature OSD
+feature FW_LAUNCH
 
 # beeper
 beeper RUNTIME_CALIBRATION
@@ -248,7 +250,7 @@ mode_color 6 10 0
 
 # aux
 aux 0 0 0 900 1300
-aux 1 2 1 1700 2100
+aux 1 1 1 1700 2100
 aux 2 3 4 1300 2100
 aux 3 3 2 1300 1650
 aux 4 11 2 1300 1650
@@ -389,7 +391,7 @@ osd_layout 0 23 2 14 V
 osd_layout 0 24 12 2 H
 osd_layout 0 25 23 5 H
 osd_layout 0 26 24 7 V
-osd_layout 0 27 24 10 V
+osd_layout 0 27 24 10 H
 osd_layout 0 28 23 14 V
 osd_layout 0 29 23 12 H
 osd_layout 0 30 2 13 V
@@ -605,7 +607,7 @@ osd_layout 2 23 2 14 H
 osd_layout 2 24 12 2 H
 osd_layout 2 25 23 5 H
 osd_layout 2 26 24 7 H
-osd_layout 2 27 24 10 V
+osd_layout 2 27 24 10 H
 osd_layout 2 28 23 13 H
 osd_layout 2 29 23 12 H
 osd_layout 2 30 0 14 V
@@ -619,8 +621,8 @@ osd_layout 2 37 1 6 H
 osd_layout 2 38 1 7 H
 osd_layout 2 39 1 5 H
 osd_layout 2 40 8 14 H
-osd_layout 2 41 2 8 H
-osd_layout 2 42 2 7 H
+osd_layout 2 41 20 3 V
+osd_layout 2 42 20 4 V
 osd_layout 2 43 0 0 H
 osd_layout 2 44 0 0 H
 osd_layout 2 45 0 0 H
@@ -799,7 +801,7 @@ osd_layout 3 107 1 3 H
 set looptime = 1000
 set gyro_sync = ON
 set align_gyro = DEFAULT
-set gyro_hardware_lpf = 188HZ
+set gyro_hardware_lpf = 256HZ
 set gyro_lpf_hz = 35
 set gyro_lpf_type = BIQUAD
 set moron_threshold = 32
@@ -847,7 +849,7 @@ set align_mag_yaw = 0
 set baro_hardware = BMP280
 set baro_median_filter = ON
 set baro_cal_tolerance = 150
-set pitot_hardware = VIRTUAL
+set pitot_hardware = NONE
 set pitot_lpf_milli_hz = 350
 set pitot_scale =  1.000
 set receiver_type = SERIAL
@@ -892,8 +894,8 @@ set failsafe_fw_yaw_rate = -45
 set failsafe_min_distance = 0
 set failsafe_min_distance_procedure = DROP
 set failsafe_mission = ON
-set align_board_roll = 0
-set align_board_pitch = 35
+set align_board_roll = -20
+set align_board_pitch = 15
 set align_board_yaw = 0
 set vbat_meter_type = ADC
 set vbat_scale = 1100
@@ -1017,30 +1019,30 @@ set nav_mc_braking_boost_disengage_speed = 100
 set nav_mc_braking_bank_angle = 40
 set nav_mc_pos_deceleration_time = 120
 set nav_mc_pos_expo = 10
-set nav_fw_cruise_thr = 1470
+set nav_fw_cruise_thr = 1440
 set nav_fw_min_thr = 1200
 set nav_fw_max_thr = 1700
 set nav_fw_bank_angle = 45
 set nav_fw_climb_angle = 30
 set nav_fw_dive_angle = 20
-set nav_fw_pitch2thr = 10
+set nav_fw_pitch2thr = 6
 set nav_fw_loiter_radius = 6000
 set nav_fw_cruise_speed = 0
 set nav_fw_control_smoothness = 0
 set nav_fw_land_dive_angle = 2
 set nav_fw_launch_velocity = 300
 set nav_fw_launch_accel = 1863
-set nav_fw_launch_max_angle = 45
+set nav_fw_launch_max_angle = 60
 set nav_fw_launch_detect_time = 40
-set nav_fw_launch_thr = 1700
-set nav_fw_launch_idle_thr = 1000
-set nav_fw_launch_motor_delay = 500
+set nav_fw_launch_thr = 1800
+set nav_fw_launch_idle_thr = 1150
+set nav_fw_launch_motor_delay = 150
 set nav_fw_launch_spinup_time = 100
 set nav_fw_launch_min_time = 0
-set nav_fw_launch_timeout = 5000
+set nav_fw_launch_timeout = 6000
 set nav_fw_launch_max_altitude = 0
 set nav_fw_launch_climb_angle = 18
-set nav_fw_cruise_yaw_rate = 20
+set nav_fw_cruise_yaw_rate = 0
 set nav_fw_allow_manual_thr_increase = OFF
 set nav_use_fw_yaw_control = OFF
 set nav_fw_yaw_deadband = 0
@@ -1132,7 +1134,7 @@ set display_force_sw_blink = OFF
 set vtx_halfduplex = ON
 set vtx_band = 2
 set vtx_channel = 4
-set vtx_power = 1
+set vtx_power = 3
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_pit_mode_chan = 1
 set vtx_max_power_override = 0
@@ -1156,11 +1158,11 @@ set mc_p_level = 20
 set mc_i_level = 15
 set mc_d_level = 75
 set fw_p_pitch = 5
-set fw_i_pitch = 14
-set fw_ff_pitch = 56
-set fw_p_roll = 7
-set fw_i_roll = 12
-set fw_ff_roll = 25
+set fw_i_pitch = 5
+set fw_ff_pitch = 71
+set fw_p_roll = 5
+set fw_i_roll = 5
+set fw_ff_roll = 51
 set fw_p_yaw = 6
 set fw_i_yaw = 10
 set fw_ff_yaw = 60
@@ -1203,7 +1205,7 @@ set nav_mc_vel_xy_dterm_lpf_hz =  2.000
 set nav_fw_pos_z_p = 40
 set nav_fw_pos_z_i = 5
 set nav_fw_pos_z_d = 10
-set nav_fw_pos_xy_p = 75
+set nav_fw_pos_xy_p = 71
 set nav_fw_pos_xy_i = 5
 set nav_fw_pos_xy_d = 8
 set nav_fw_heading_p = 60
