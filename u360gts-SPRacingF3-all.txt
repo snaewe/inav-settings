@@ -1,0 +1,92 @@
+
+version
+# u360gts / SPRACINGF3 dev-11.2.0 Apr 29 2021 / 19:30:26 (8c81239)
+# status
+System Uptime: 26 seconds, Voltage: 0 * 0.1V (3S battery - OK)
+CPU Clock=72MHz, GYRO=MPU60500, ACC=MPU6050.n0, BARO=MS56110, MAG=QMC58830, GPS=1
+Cycle Time: 1003, I2C Errors: 0, config size: 1940
+
+# set
+Current settings: 
+looptime = 1000
+emf_avoidance = OFF
+min_logic_level = 60
+rssi_channel = 0
+rssi_scale = 30
+rssi_zoom = 35
+gps_baud = 7
+gps_provider = UBLOX
+gps_sbas_mode = AUTO
+gps_auto_config = ON
+gps_auto_baud = ON
+gps_min_sats = 6
+gps_home_beeper = ON
+update_home_by_local_gps = ON
+restore_last_home = OFF
+home_lat = 0
+home_lon = 0
+home_alt = 0
+battery_capacity = 0
+vbat_scale = 110
+vbat_max_cell_voltage = 43
+vbat_min_cell_voltage = 33
+vbat_warning_cell_voltage = 35
+align_gyro = DEFAULT
+align_mag = DEFAULT
+align_board_roll = 0
+align_board_pitch = 0
+align_board_yaw = 0
+gyro_lpf = 42
+mag_hardware = 0
+magzero_x = -32
+magzero_y = 162
+magzero_z = -1230
+mag_declination = 0
+mag_calibrated = 1
+offset = 90
+offset_trim = 0
+p = 2500
+i = 20
+d = 250
+max_pid_error = 10
+max_pid_accumulator = 5000
+max_pid_gain = 500
+pid_divider = 15
+nopid_min_delta =  0.200
+nopid_map_angle = 90
+nopid_max_speed = 200
+pan_pin = 0
+pan0 = 1540
+pan0_calibrated = 1
+pan_calibration_pulse = 1400
+pan_inverted = OFF
+min_pan_speed = 0
+tilt_pin = 1
+tilt0 = 500
+tilt90 = 1400
+tilt_max_angle = 0
+easing = 2
+easing_steps = 60
+easing_min_angle = 4
+easing_millis = 15
+init_servos = 0
+servo_pwm_rate = 50
+telemetry_baud = 8
+telemetry_protocol = 1024
+telemetry_min_sats = 6
+telemetry_provider = INAV
+telemetry_home = DEFAULT
+telemetry_altitude_priority = BARO
+telemetry_inversion = OFF
+start_tracking_distance = 10
+start_tracking_altitude = 4
+eps = 1
+eps_distance_gain = 100
+eps_heading_gain = 50
+eps_speed_gain = 60
+eps_frequency = 250
+eps_interpolation = OFF
+eps_interpolation_points = 3
+max_speed_filter = 0
+
+# 
