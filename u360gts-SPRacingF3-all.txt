@@ -1,92 +1,120 @@
 
-version
-# u360gts / SPRACINGF3 dev-11.2.0 Apr 29 2021 / 19:30:26 (8c81239)
-# status
-System Uptime: 26 seconds, Voltage: 0 * 0.1V (3S battery - OK)
-CPU Clock=72MHz, GYRO=MPU60500, ACC=MPU6050.n0, BARO=MS56110, MAG=QMC58830, GPS=1
-Cycle Time: 1003, I2C Errors: 0, config size: 1940
 
-# set
-Current settings: 
-looptime = 1000
-emf_avoidance = OFF
-min_logic_level = 60
-rssi_channel = 0
-rssi_scale = 30
-rssi_zoom = 35
-gps_baud = 7
-gps_provider = UBLOX
-gps_sbas_mode = AUTO
-gps_auto_config = ON
-gps_auto_baud = ON
-gps_min_sats = 6
-gps_home_beeper = ON
-update_home_by_local_gps = ON
-restore_last_home = OFF
-home_lat = 0
-home_lon = 0
-home_alt = 0
-battery_capacity = 0
-vbat_scale = 110
-vbat_max_cell_voltage = 43
-vbat_min_cell_voltage = 33
-vbat_warning_cell_voltage = 35
-align_gyro = DEFAULT
-align_mag = DEFAULT
-align_board_roll = 0
-align_board_pitch = 0
-align_board_yaw = 0
-gyro_lpf = 42
-mag_hardware = 0
-magzero_x = -32
-magzero_y = 162
-magzero_z = -1230
-mag_declination = 0
-mag_calibrated = 1
-offset = 90
-offset_trim = 0
-p = 2500
-i = 20
-d = 250
-max_pid_error = 10
-max_pid_accumulator = 5000
-max_pid_gain = 500
-pid_divider = 15
-nopid_min_delta =  0.200
-nopid_map_angle = 90
-nopid_max_speed = 200
-pan_pin = 0
-pan0 = 1540
-pan0_calibrated = 1
-pan_calibration_pulse = 1400
-pan_inverted = OFF
-min_pan_speed = 0
-tilt_pin = 1
-tilt0 = 500
-tilt90 = 1400
-tilt_max_angle = 0
-easing = 2
-easing_steps = 60
-easing_min_angle = 4
-easing_millis = 15
-init_servos = 0
-servo_pwm_rate = 50
-telemetry_baud = 8
-telemetry_protocol = 1024
-telemetry_min_sats = 6
-telemetry_provider = INAV
-telemetry_home = DEFAULT
-telemetry_altitude_priority = BARO
-telemetry_inversion = OFF
-start_tracking_distance = 10
-start_tracking_altitude = 4
-eps = 1
-eps_distance_gain = 100
-eps_heading_gain = 50
-eps_speed_gain = 60
-eps_frequency = 250
-eps_interpolation = OFF
-eps_interpolation_points = 3
-max_speed_filter = 0
+
+# dump configuration
+
+
+# version
+# u360gts / SPRACINGF3 RC1-11.1.0 Sep 23 2020 / 20:12:35 (77a3552)
+
+# serial
+serial 0 1 115200 57600 0 115200
+serial 1 2 115200 57600 0 115200
+serial 2 0 115200 57600 0 115200
+serial 30 0 115200 57600 0 115200
+serial 31 0 115200 57600 0 115200
+
+
+# feature
+feature -VBAT
+feature -SERVO_TILT
+feature -SOFTSERIAL
+feature -GPS
+feature -SONAR
+feature -TELEMETRY
+feature -CURRENT_METER
+feature -DISPLAY
+feature -BLACKBOX
+feature -EASING
+feature -NOPID
+feature -DEBUG
+feature -EPS
+feature -RSSI_ADC
+feature -AUTODETECT
+feature SERVO_TILT
+feature SOFTSERIAL
+feature GPS
+feature DISPLAY
+
+
+
+# parameters
+set looptime = 1000
+set emf_avoidance = OFF
+set min_logic_level = 60
+set rssi_channel = 0
+set rssi_scale = 30
+set rssi_zoom = 35
+set gps_baud = 7
+set gps_provider = NMEA
+set gps_sbas_mode = AUTO
+set gps_auto_config = OFF
+set gps_auto_baud = OFF
+set gps_min_sats = 6
+set gps_home_beeper = ON
+set update_home_by_local_gps = ON
+set battery_capacity = 0
+set vbat_scale = 110
+set vbat_max_cell_voltage = 43
+set vbat_min_cell_voltage = 33
+set vbat_warning_cell_voltage = 35
+set align_gyro = DEFAULT
+set align_mag = DEFAULT
+set align_board_roll = 0
+set align_board_pitch = 0
+set align_board_yaw = 0
+set gyro_lpf = 42
+set mag_hardware = 0
+set magzero_x = -118
+set magzero_y = 163
+set magzero_z = -696
+set mag_declination = 312
+set mag_calibrated = 1
+set offset = 180
+set offset_trim = 0
+set p = 2500
+set i = 20
+set d = 250
+set max_pid_error = 10
+set max_pid_accumulator = 5000
+set max_pid_gain = 500
+set pid_divider = 15
+set nopid_min_delta =  0.200
+set nopid_map_angle = 90
+set nopid_max_speed = 200
+set pan_pin = 0
+set pan0 = 1539
+set pan0_calibrated = 0
+set pan_calibration_pulse = 1500
+set pan_inverted = OFF
+set min_pan_speed = 0
+set tilt_pin = 1
+set tilt0 = 500
+set tilt90 = 1400
+set tilt_max_angle = 0
+set easing = 2
+set easing_steps = 60
+set easing_min_angle = 4
+set easing_millis = 15
+set init_servos = 0
+set servo_pwm_rate = 50
+set telemetry_baud = 8
+set telemetry_protocol = 1024
+set telemetry_min_sats = 6
+set telemetry_provider = INAV
+set telemetry_home = DEFAULT
+set start_tracking_distance = 10
+set start_tracking_altitude = 4
+set eps = 1
+set eps_distance_gain = 100
+set eps_heading_gain = 50
+set eps_speed_gain = 60
+set eps_frequency = 250
+set eps_interpolation = OFF
+set eps_interpolation_points = 3
+set max_speed_filter = 0
+
+
+# dump finished
 
 # 
