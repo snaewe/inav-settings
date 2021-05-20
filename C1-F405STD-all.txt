@@ -29,9 +29,9 @@ smix 4 5 6 100 0 0
 servo 0 1000 2000 1500 100
 servo 1 1000 2000 1500 100
 servo 2 1000 2000 1500 100
-servo 3 1000 2000 1498 -100
-servo 4 1000 2000 1410 100
-servo 5 1000 2000 1500 100
+servo 3 1000 2000 1466 -100
+servo 4 1000 2000 1443 100
+servo 5 1000 2000 1496 100
 servo 6 1000 2000 1500 100
 servo 7 1000 2000 1500 100
 servo 8 1000 2000 1500 100
@@ -101,7 +101,6 @@ feature -PWM_OUTPUT_ENABLE
 feature -OSD
 feature -FW_LAUNCH
 feature VBAT
-feature TX_PROF_SEL
 feature MOTOR_STOP
 feature GPS
 feature TELEMETRY
@@ -142,16 +141,16 @@ map AETR
 # serial
 serial 20 1 115200 115200 0 115200
 serial 0 64 115200 115200 0 115200
-serial 1 0 115200 115200 0 115200
+serial 1 2048 115200 115200 0 115200
 serial 2 2 115200 115200 0 115200
-serial 3 2048 115200 115200 0 115200
-serial 4 0 115200 115200 0 115200
+serial 3 0 115200 115200 0 115200
+serial 4 1 57600 115200 0 115200
 
 # led
-led 0 0,0::C:0
-led 1 0,0::C:0
-led 2 0,0::C:0
-led 3 0,0::C:0
+led 0 5,7::CB:2
+led 1 5,8::CB:2
+led 2 7,7::CB:5
+led 3 7,8::CB:5
 led 4 0,0::C:0
 led 5 0,0::C:0
 led 6 0,0::C:0
@@ -251,18 +250,18 @@ mode_color 6 10 0
 # aux
 aux 0 0 0 900 1300
 aux 1 1 1 1700 2100
-aux 2 3 4 1300 2100
+aux 2 3 4 1700 2100
 aux 3 3 2 1300 1650
 aux 4 11 2 1300 1650
 aux 5 10 2 1700 2100
-aux 6 45 4 1750 2100
-aux 7 12 1 900 1300
-aux 8 37 6 1300 1675
-aux 9 21 6 1750 2100
-aux 10 42 5 1300 1650
-aux 11 43 7 1100 2100
-aux 12 44 5 1750 2100
-aux 13 0 0 900 900
+aux 6 28 4 1300 1700
+aux 7 45 4 1750 2100
+aux 8 12 1 900 1300
+aux 9 37 6 1300 1675
+aux 10 21 6 1750 2100
+aux 11 42 5 1300 1650
+aux 12 43 7 1100 2100
+aux 13 44 5 1750 2100
 aux 14 0 0 900 900
 aux 15 0 0 900 900
 aux 16 0 0 900 900
@@ -301,16 +300,16 @@ temp_sensor 6 0 0 0 0 0
 temp_sensor 7 0 0 0 0 0 
 
 # wp
-#wp 0 invalid
-wp 0 0 0 0 0 0 0 0 0
-wp 1 0 0 0 0 0 0 0 0
-wp 2 0 0 0 0 0 0 0 0
-wp 3 0 0 0 0 0 0 0 0
-wp 4 0 0 0 0 0 0 0 0
-wp 5 0 0 0 0 0 0 0 0
-wp 6 0 0 0 0 0 0 0 0
-wp 7 0 0 0 0 0 0 0 0
-wp 8 0 0 0 0 0 0 0 0
+#wp 9 valid
+wp 0 1 530206766 88476068 5000 0 0 0 0
+wp 1 1 530220103 88333111 5500 0 0 0 0
+wp 2 1 530092056 88284991 7000 0 0 0 0
+wp 3 1 530143249 88071470 6500 0 0 0 0
+wp 4 1 530073232 88073462 7000 0 0 0 0
+wp 5 1 530068259 88033186 7500 0 0 0 0
+wp 6 1 530094370 88006755 6000 0 0 0 0
+wp 7 1 530201435 88061102 4000 0 0 0 0
+wp 8 4 0 0 0 0 0 0 165
 wp 9 0 0 0 0 0 0 0 0
 wp 10 0 0 0 0 0 0 0 0
 wp 11 0 0 0 0 0 0 0 0
@@ -449,7 +448,7 @@ osd_layout 0 81 2 12 H
 osd_layout 0 82 2 12 H
 osd_layout 0 83 2 12 H
 osd_layout 0 84 2 12 H
-osd_layout 0 85 23 1 H
+osd_layout 0 85 25 10 V
 osd_layout 0 86 19 2 H
 osd_layout 0 87 19 3 H
 osd_layout 0 88 19 4 H
@@ -717,11 +716,11 @@ osd_layout 3 25 23 5 H
 osd_layout 3 26 24 7 H
 osd_layout 3 27 3 5 H
 osd_layout 3 28 23 11 H
-osd_layout 3 29 23 12 H
+osd_layout 3 29 23 12 V
 osd_layout 3 30 1 13 V
 osd_layout 3 31 0 10 H
 osd_layout 3 32 12 1 H
-osd_layout 3 33 6 2 H
+osd_layout 3 33 1 10 V
 osd_layout 3 34 18 2 H
 osd_layout 3 35 1 5 H
 osd_layout 3 36 1 5 H
@@ -802,7 +801,7 @@ set looptime = 1000
 set gyro_sync = ON
 set align_gyro = DEFAULT
 set gyro_hardware_lpf = 188HZ
-set gyro_lpf_hz = 35
+set gyro_lpf_hz = 20
 set gyro_lpf_type = BIQUAD
 set moron_threshold = 32
 set gyro_notch1_hz = 0
@@ -855,8 +854,8 @@ set pitot_scale =  1.000
 set receiver_type = SERIAL
 set min_check = 1100
 set max_check = 1900
-set rssi_source = AUTO
-set rssi_channel = 0
+set rssi_source = CHANNEL
+set rssi_channel = 17
 set rssi_min = 0
 set rssi_max = 100
 set sbus_sync_interval = 3000
@@ -1079,9 +1078,9 @@ set osd_row_shiftdown = 0
 set osd_units = METRIC
 set osd_stats_energy_unit = MAH
 set osd_rssi_alarm = 20
-set osd_time_alarm = 10
-set osd_alt_alarm = 100
-set osd_dist_alarm = 1000
+set osd_time_alarm = 0
+set osd_alt_alarm = 0
+set osd_dist_alarm = 0
 set osd_neg_alt_alarm = 5
 set osd_current_alarm = 0
 set osd_gforce_alarm =  5.000
@@ -1109,7 +1108,7 @@ set osd_hud_radar_disp = 0
 set osd_hud_radar_range_min = 3
 set osd_hud_radar_range_max = 4000
 set osd_hud_radar_nearest = 0
-set osd_hud_wp_disp = 0
+set osd_hud_wp_disp = 1
 set osd_left_sidebar_scroll = NONE
 set osd_right_sidebar_scroll = NONE
 set osd_sidebar_scroll_arrows = OFF
@@ -1134,7 +1133,7 @@ set display_force_sw_blink = OFF
 set vtx_halfduplex = ON
 set vtx_band = 2
 set vtx_channel = 4
-set vtx_power = 4
+set vtx_power = 2
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_pit_mode_chan = 1
 set vtx_max_power_override = 0
@@ -1157,12 +1156,12 @@ set mc_d_yaw = 0
 set mc_p_level = 20
 set mc_i_level = 15
 set mc_d_level = 75
-set fw_p_pitch = 5
-set fw_i_pitch = 5
-set fw_ff_pitch = 71
-set fw_p_roll = 5
-set fw_i_roll = 5
-set fw_ff_roll = 51
+set fw_p_pitch = 7
+set fw_i_pitch = 7
+set fw_ff_pitch = 60
+set fw_p_roll = 7
+set fw_i_roll = 7
+set fw_ff_roll = 60
 set fw_p_yaw = 6
 set fw_i_yaw = 10
 set fw_ff_yaw = 60
