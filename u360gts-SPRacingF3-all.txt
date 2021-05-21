@@ -1,5 +1,5 @@
 
-
+dump all
 
 # dump configuration
 
@@ -31,10 +31,12 @@ feature -DEBUG
 feature -EPS
 feature -RSSI_ADC
 feature -AUTODETECT
+feature VBAT
 feature SERVO_TILT
 feature SOFTSERIAL
 feature GPS
 feature DISPLAY
+feature EPS
 
 
 
@@ -46,10 +48,10 @@ set rssi_channel = 0
 set rssi_scale = 30
 set rssi_zoom = 35
 set gps_baud = 7
-set gps_provider = NMEA
+set gps_provider = UBLOX
 set gps_sbas_mode = AUTO
-set gps_auto_config = OFF
-set gps_auto_baud = OFF
+set gps_auto_config = ON
+set gps_auto_baud = ON
 set gps_min_sats = 6
 set gps_home_beeper = ON
 set update_home_by_local_gps = ON
@@ -65,9 +67,9 @@ set align_board_pitch = 0
 set align_board_yaw = 0
 set gyro_lpf = 42
 set mag_hardware = 0
-set magzero_x = -118
-set magzero_y = 163
-set magzero_z = -696
+set magzero_x = -232
+set magzero_y = 469
+set magzero_z = -529
 set mag_declination = 312
 set mag_calibrated = 1
 set offset = 180
@@ -99,7 +101,7 @@ set easing_millis = 15
 set init_servos = 0
 set servo_pwm_rate = 50
 set telemetry_baud = 8
-set telemetry_protocol = 1024
+set telemetry_protocol = 256
 set telemetry_min_sats = 6
 set telemetry_provider = INAV
 set telemetry_home = DEFAULT
