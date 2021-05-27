@@ -1,0 +1,6 @@
+set imu_acc_ignore_rate=8
+set imu_acc_ignore_slope=5
+# Configuration
+set gyro_hardware_lpf=256HZ
+# PID tuning -> Filters: Gyro LPF cutoff frequency
+set gyro_lpf_hz = 25
