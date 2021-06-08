@@ -1,0 +1,195 @@
+# version
+# INAV/MATEKF405SE 2.4.0 Feb 11 2020 / 22:58:10 (bcd4caef9)
+# GCC-8.2.1 20181213 (release) [gcc-8-branch revision 267074]
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults noreboot
+
+# resources
+
+# mixer
+mmix 0  1.000  0.000  0.000  0.100
+mmix 1  1.000  0.000  0.000 -0.100
+
+# servo mix
+smix 0 3 0 50 0 -1
+smix 1 3 1 50 0 -1
+smix 2 4 0 -50 0 -1
+smix 3 4 1 50 0 -1
+
+# servo
+servo 3 1000 2000 1500 -100
+servo 6 500 2500 1500 100
+
+# logic
+
+# gf
+
+# feature
+feature MOTOR_STOP
+feature LED_STRIP
+feature DASHBOARD
+feature BLACKBOX
+feature PWM_OUTPUT_ENABLE
+
+# beeper
+
+# map
+
+# serial
+serial 0 64 115200 115200 0 115200
+serial 1 0 115200 115200 0 115200
+serial 4 262144 115200 115200 0 115200
+serial 30 0 115200 115200 0 115200
+
+# led
+led 0 5,7::C:2
+led 1 6,7::C:4
+led 2 7,7::C:4
+led 3 8,7::C:5
+
+# color
+color 15 67,67,138
+
+# mode_color
+
+# aux
+aux 0 0 0 900 1300		#  0 =>  0 (ARM)
+aux 1 2 1 1400 2100		#  2 =>  2 (HORIZON)
+aux 2 8 0 1300 1700		#  7 =>  8 (CAMSTAB)
+aux 3 3 4 1400 2100		#  3 =>  3 (NAV ALTHOLD)
+aux 4 11 2 1300 1700		#  9 => 11 (NAV POSHOLD)
+aux 5 10 2 1700 2100		#  8 => 10 (NAV RTH)
+aux 6 45 4 1700 2100		# 35 => 45 (NAV CRUISE)
+aux 7 12 1 900 1300		# 10 => 12 (MANUAL)
+aux 8 37 6 1300 1700		# 27 => 37 (SERVO AUTOTRIM)
+aux 9 21 6 1700 2100		# 28 => 21 (AUTO TUNE)
+
+# adjrange
+
+# rxrange
+
+# temp_sensor
+
+# wp
+#wp 0 invalid
+
+# osd_layout
+osd_layout 0 0 13 1 V
+osd_layout 0 1 1 11 V
+osd_layout 0 2 0 0 V
+osd_layout 0 4 8 6 H
+osd_layout 0 7 24 3 V
+osd_layout 0 9 1 3 H
+osd_layout 0 10 10 1 H
+osd_layout 0 11 1 10 V
+osd_layout 0 12 2 4 V
+osd_layout 0 13 25 9 V
+osd_layout 0 14 2 2 V
+osd_layout 0 15 25 5 V
+osd_layout 0 20 16 15 H
+osd_layout 0 21 3 14 H
+osd_layout 0 22 14 11 V
+osd_layout 0 23 2 14 V
+osd_layout 0 25 23 5 V
+osd_layout 0 26 24 7 V
+osd_layout 0 27 24 10 V
+osd_layout 0 28 23 14 V
+osd_layout 0 29 23 1 V
+osd_layout 0 30 2 13 V
+osd_layout 0 31 1 0 H
+osd_layout 0 33 1 3 V
+osd_layout 0 34 10 2 V
+osd_layout 0 35 1 5 V
+osd_layout 0 40 8 14 V
+osd_layout 0 41 2 8 V
+osd_layout 0 42 2 7 V
+osd_layout 0 106 2 12 V
+
+# master
+set gyro_hardware_lpf = 256HZ
+set gyro_lpf_hz = 35
+set rssi_adc_channel = 0
+set airspeed_adc_channel = 3
+set acc_hardware = MPU6000
+set acczero_x = 70
+set acczero_y = -52
+set acczero_z = -301
+set accgain_x = 4069
+set accgain_y = 4057
+set accgain_z = 4028
+set mag_hardware = NONE
+set baro_hardware = BMP280
+set pitot_hardware = ADC
+set rssi_max = 49
+set serialrx_provider = CRSF
+set motor_pwm_rate = 4000
+set motor_pwm_protocol = DSHOT150
+set throttle_idle =  10.000
+set failsafe_procedure = RTH
+set align_board_yaw = 1800
+set model_preview_type = 27
+set small_angle = 180
+set applied_defaults = 3
+set gps_provider = UBLOX7
+set gps_sbas_mode = EGNOS
+set inav_w_z_baro_p =  0.350
+set nav_rth_climb_first = OFF
+set nav_rth_allow_landing = FS_ONLY
+set nav_rth_alt_mode = AT_LEAST_LINEAR_DESCENT
+set nav_rth_altitude = 5000
+set nav_fw_bank_angle = 60
+set telemetry_inverted = ON
+set telemetry_uart_unidir = ON
+set osd_video_system = PAL
+
+# profile
+profile 1
+
+set fw_i_pitch = 14
+set fw_ff_pitch = 56
+set fw_p_roll = 7
+set fw_i_roll = 12
+set fw_ff_roll = 25
+set fw_p_yaw = 45
+set fw_i_yaw = 5
+set fw_ff_yaw = 15
+set yaw_lpf_hz = 30
+set tpa_rate = 30
+set tpa_breakpoint = 1550
+set roll_rate = 26
+set pitch_rate = 14
+
+# profile
+profile 2
+
+
+# profile
+profile 3
+
+
+# battery_profile
+battery_profile 1
+
+
+# battery_profile
+battery_profile 2
+
+
+# battery_profile
+battery_profile 3
+
+
+# restore original profile selection
+profile 1
+battery_profile 1
+
+# save configuration
+save
+
+# 
+### inav 2.5 aux conversion by box2perm 2021-03-17T08:26:09.463Z ###
+
