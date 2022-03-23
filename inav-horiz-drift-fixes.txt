@@ -1,5 +1,17 @@
+# new settings
 set imu_acc_ignore_rate=8
+set imu_acc_ignore_slope=3
+set imu_dcm_kp = 1000
+set imu_dcm_ki = 0
+
+# default settings
+set imu_acc_ignore_rate=9
 set imu_acc_ignore_slope=5
+set imu_dcm_kp = 2500
+set imu_dcm_ki = 50
+
+set debug_mode = GYRO
+
 # Configuration
 set gyro_hardware_lpf=256HZ
 # PID tuning -> Filters: Gyro LPF cutoff frequency
