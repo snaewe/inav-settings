@@ -1,8 +1,4 @@
-version
-# INAV/OMNIBUSF4V3 2.5.2 Aug  4 2020 / 10:05:34 (faaedc7cb)
-# GCC-9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599]
-
-# diff all
+diff all
 
 # version
 # INAV/OMNIBUSF4V3 2.5.2 Aug  4 2020 / 10:05:34 (faaedc7cb)
@@ -72,22 +68,20 @@ serial 0 64 115200 115200 0 115200
 serial 5 2 115200 115200 0 115200
 
 # led
-led 0 5,6::C:2
-led 1 6,6::FT:0
-led 2 7,6::FT:0
-led 3 8,6::G:6
 
 # color
 
 # mode_color
+mode_color 6 0 9
+mode_color 6 1 2
 
 # aux
 aux 0 0 0 900 1300
-aux 1 2 1 1700 2100
+aux 1 1 1 1700 2100
 aux 2 3 4 1300 2100
 aux 3 11 2 1300 1700
 aux 4 10 2 1700 2100
-aux 5 28 7 1700 2100
+aux 5 28 4 1300 1700
 aux 6 45 4 1700 2100
 aux 7 12 1 900 1300
 aux 8 37 6 1300 1675
@@ -97,11 +91,6 @@ aux 11 43 7 1175 2100
 aux 12 44 5 1700 2100
 
 # adjrange
-adjrange 0 0 7 1125 1200 31 3
-adjrange 1 0 7 1225 1275 30 3
-adjrange 2 0 7 1325 1375 29 3
-adjrange 3 0 7 1475 1525 28 3
-adjrange 4 0 7 1950 2100 35 3
 
 # rxrange
 
@@ -127,7 +116,7 @@ osd_layout 0 22 14 11 V
 osd_layout 0 23 2 14 V
 osd_layout 0 24 2 9 V
 osd_layout 0 26 24 7 V
-osd_layout 0 27 24 10 V
+osd_layout 0 27 24 10 H
 osd_layout 0 28 23 14 V
 osd_layout 0 30 2 13 V
 osd_layout 0 31 1 0 H
@@ -155,7 +144,7 @@ osd_layout 1 20 16 15 H
 osd_layout 1 21 3 14 H
 osd_layout 1 22 14 11 V
 osd_layout 1 23 2 14 V
-osd_layout 1 27 24 10 V
+osd_layout 1 27 24 10 H
 osd_layout 1 28 23 14 V
 osd_layout 1 30 2 13 V
 osd_layout 1 31 1 0 H
@@ -179,6 +168,7 @@ osd_layout 2 76 11 10 V
 osd_layout 2 77 11 12 H
 osd_layout 3 0 13 1 V
 osd_layout 3 1 1 11 V
+osd_layout 3 2 0 0 V
 osd_layout 3 3 8 6 V
 osd_layout 3 8 18 1 V
 osd_layout 3 30 1 13 V
@@ -187,6 +177,7 @@ osd_layout 3 33 0 10 V
 
 # master
 set gyro_hardware_lpf = 256HZ
+set gyro_lpf_hz = 25
 set acc_hardware = MPU6000
 set acczero_x = 139
 set acczero_y = -35
@@ -199,9 +190,10 @@ set magzero_x = -292
 set magzero_y = -20
 set magzero_z = 12
 set baro_hardware = BMP280
-set pitot_hardware = VIRTUAL
+set pitot_hardware = NONE
 set receiver_type = SERIAL
-set rssi_source = PROTOCOL
+set rssi_source = CHANNEL
+set rssi_channel = 17
 set rssi_max = 50
 set serialrx_provider = CRSF
 set max_throttle = 2000
@@ -209,8 +201,8 @@ set motor_pwm_rate = 4000
 set motor_pwm_protocol = DSHOT150
 set throttle_idle =  8.000
 set failsafe_procedure = RTH
-set align_board_roll = 15
-set align_board_pitch = -35
+set align_board_roll = -5
+set align_board_pitch = -40
 set align_board_yaw = 900
 set current_meter_scale = 273
 set platform_type = AIRPLANE
@@ -218,7 +210,8 @@ set model_preview_type = 30
 set 3d_deadband_low = 1425
 set 3d_neutral = 1475
 set small_angle = 180
-set imu_acc_ignore_rate = 10
+set imu_acc_ignore_rate = 8
+set imu_acc_ignore_slope = 5
 set applied_defaults = 1
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
@@ -227,8 +220,11 @@ set pos_hold_deadband = 20
 set nav_wp_safe_distance = 0
 set nav_rth_climb_first = OFF
 set nav_rth_allow_landing = FS_ONLY
+set nav_rth_alt_mode = AT_LEAST_LINEAR_DESCENT
 set nav_rth_altitude = 7000
-set nav_fw_cruise_thr = 1490
+set nav_rth_home_altitude = 5000
+set nav_fw_cruise_thr = 1430
+set nav_fw_max_thr = 1950
 set nav_fw_bank_angle = 45
 set nav_fw_dive_angle = 20
 set nav_fw_pitch2thr = 4
@@ -246,13 +242,16 @@ set osd_neg_alt_alarm = 0
 set osd_gforce_alarm =  0.000
 set osd_gforce_axis_alarm_min =  0.000
 set osd_gforce_axis_alarm_max =  0.000
-set osd_hud_homing = ON
+set osd_camera_fov_h = 145
 set osd_hud_radar_range_min = 10
+set osd_hud_wp_disp = 1
 set osd_left_sidebar_scroll = GROUND_SPEED
 set osd_right_sidebar_scroll = ALTITUDE
 set osd_coordinate_digits = 8
 set i2c_speed = 800KHZ
 set name = NanoTalon
+set tz_offset = 120
+set tz_automatic_dst = EU
 
 # profile
 profile 1
@@ -280,26 +279,28 @@ set manual_yaw_rate = 75
 # profile
 profile 3
 
-set fw_p_pitch = 11
-set fw_i_pitch = 15
+set fw_p_pitch = 8
+set fw_i_pitch = 8
 set fw_ff_pitch = 45
-set fw_p_roll = 10
-set fw_i_roll = 15
-set fw_ff_roll = 30
+set fw_p_roll = 8
+set fw_i_roll = 8
+set fw_ff_roll = 40
 set fw_p_yaw = 45
 set fw_i_yaw = 5
 set fw_ff_yaw = 15
+set fw_i_level = 20
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
 set fw_loiter_direction = YAW
+set fw_turn_assist_yaw_gain =  0.200
 set nav_fw_pos_z_p = 30
 set nav_fw_pos_z_i = 2
 set nav_fw_pos_z_d = 5
-set nav_fw_pos_xy_p = 50
+set nav_fw_pos_xy_p = 44
 set tpa_rate = 40
 set tpa_breakpoint = 1550
-set rc_expo = 30
-set roll_rate = 24
+set rc_expo = 20
+set roll_rate = 30
 set pitch_rate = 18
 set yaw_rate = 9
 set manual_rc_expo = 30
