@@ -232,7 +232,7 @@ set motor_pwm_rate = 4000
 set motor_pwm_protocol = DSHOT150
 set throttle_idle =  7.000
 set failsafe_procedure = RTH
-set align_board_pitch = -50
+set align_board_pitch = -60
 set align_board_yaw = 1800
 set model_preview_type = 27
 set small_angle = 180
@@ -277,7 +277,7 @@ profile 1
 
 set fw_p_pitch = 13
 set fw_i_pitch = 20
-set fw_ff_pitch = 131
+set fw_ff_pitch = 75
 set fw_p_roll = 6
 set fw_i_roll = 12
 set fw_ff_roll = 56
