@@ -1,4 +1,4 @@
-# mwptools / fc-cli dump at 2022-07-01T12:48:15+0200
+# mwptools / fc-cli dump at 2022-07-01T12:55:01+0200
 # fc-cli is a toolset # (fc-set, fc-get) to manage
 # iNav / βF CLI diff backup and restore
 # <https://github.com/stronnag/mwptools>
@@ -36,6 +36,9 @@ servo 2 1000 2000 1490 -100
 servo 3 1000 2000 1490 -100
 
 # safehome
+safehome 0 1 530100072 88425719
+safehome 1 1 530114171 88447572
+safehome 2 1 530089033 88465300
 
 # logic
 
