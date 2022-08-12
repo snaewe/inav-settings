@@ -1,3 +1,23 @@
+# The new best settings according to this: https://github.com/iNavFlight/inav-configurator/pull/1592
+## For airplanes without a tail (wings, delta, etc)
+set imu_acc_ignore_rate = 9
+set imu_acc_ignore_slope = 5
+set nav_fw_pos_z_p = 35
+set nav_fw_pos_z_i = 5
+set nav_fw_pos_z_d = 10
+set nav_fw_pos_xy_p = 70
+set imu_dcm_kp = 1000
+set imu_dcm_ki = 0
+
+## For airplanes with a tail (dedicated elevator)
+set imu_acc_ignore_rate = 7
+set imu_acc_ignore_slope = 4
+set nav_fw_pos_z_p = 25
+set nav_fw_pos_z_i = 5
+set nav_fw_pos_z_d = 7
+set nav_fw_pos_xy_p = 55
+set imu_dcm_kp = 1000
+set imu_dcm_ki = 0
 # new settings
 set imu_acc_ignore_rate=8
 set imu_acc_ignore_slope=3
