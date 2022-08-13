@@ -26,30 +26,31 @@ smix 0 3 0 50 0 -1
 smix 1 3 1 50 0 -1
 smix 2 4 0 -50 0 -1
 smix 3 4 1 50 0 -1
-smix 4 5 19 100 100 -1
-smix 5 6 11 100 100 -1
-smix 6 5 4 10 0 0
-smix 7 6 5 -30 0 0
+smix 4 5 6 100 80 -1
+smix 5 5 4 20 0 1
+smix 6 6 5 -100 0 1
 
 # servo
-servo 3 1000 2000 1388 -100
-servo 4 1000 2000 1540 100
-servo 5 884 1810 1458 -100
-servo 6 1440 2150 1650 -100
+servo 3 1000 2000 1411 -100
+servo 4 1000 2000 1447 100
+servo 5 600 2400 1520 -100
+servo 6 1440 2150 1500 -100
 
 # logic
-logic 0 1 -1 1 3 4 0 0 0
+logic 1 1 -1 1 3 4 0 1 0
 
 # gvar
 
 # gf
 
 # feature
+feature -TX_PROF_SEL
 feature -AIRMODE
 feature MOTOR_STOP
 feature GPS
 feature LED_STRIP
 feature PWM_OUTPUT_ENABLE
+feature FW_LAUNCH
 
 # beeper
 beeper -BAT_CRIT_LOW
@@ -59,8 +60,11 @@ beeper -ON_USB
 # map
 
 # serial
+serial 0 64 57600 115200 0 115200
+serial 1 0 115200 115200 0 115200
 serial 2 2 115200 115200 0 115200
-serial 4 256 115200 115200 57600 115200
+serial 3 1 115200 115200 0 115200
+serial 4 0 115200 115200 57600 115200
 serial 5 2048 115200 115200 0 115200
 serial 30 0 115200 115200 0 115200
 
@@ -71,21 +75,34 @@ serial 30 0 115200 115200 0 115200
 # mode_color
 
 # aux
-aux 0 0 0 1700 2100
-aux 1 2 1 1700 2100
+aux 0 0 0 1725 2025
+aux 1 1 1 1700 2100
 aux 2 3 4 1300 2100
 aux 3 3 2 1300 1650
 aux 4 11 2 1300 1650
 aux 5 10 2 1700 2100
-aux 6 45 4 1750 2100
-aux 7 12 1 900 1300
-aux 8 37 6 1300 1675
-aux 9 21 6 1750 2100
-aux 10 42 5 1300 1650
-aux 11 43 6 1350 2100
-aux 12 44 5 1750 2100
+aux 6 28 4 1275 1675
+aux 7 45 4 1750 2100
+aux 8 12 1 900 1300
+aux 9 37 6 1300 1675
+aux 10 21 6 1750 2100
+aux 11 42 5 1300 1650
+aux 12 43 7 1125 2100
+aux 13 44 5 1750 2100
 
 # adjrange
+adjrange 0 0 7 1050 1100 49 3
+adjrange 1 0 7 1125 1175 31 3
+adjrange 2 0 7 1175 1225 30 3
+adjrange 3 0 7 1250 1300 29 3
+adjrange 4 0 7 1325 1375 28 3
+adjrange 5 0 7 900 1000 0 3
+adjrange 6 0 7 1400 1450 18 3
+adjrange 7 0 7 1475 1525 19 3
+adjrange 8 0 7 1550 1600 14 3
+adjrange 9 0 7 1600 1650 15 3
+adjrange 10 0 7 1675 1725 16 3
+adjrange 11 0 7 1750 2100 13 3
 
 # rxrange
 
@@ -101,7 +118,7 @@ osd_layout 0 2 0 0 V
 osd_layout 0 4 8 6 H
 osd_layout 0 7 24 3 V
 osd_layout 0 9 1 3 H
-osd_layout 0 10 22 1 V
+osd_layout 0 10 21 1 V
 osd_layout 0 11 2 10 V
 osd_layout 0 12 0 4 V
 osd_layout 0 13 25 9 V
@@ -112,7 +129,7 @@ osd_layout 0 21 3 14 H
 osd_layout 0 22 14 11 V
 osd_layout 0 23 2 14 V
 osd_layout 0 26 24 7 V
-osd_layout 0 27 24 10 V
+osd_layout 0 27 24 10 H
 osd_layout 0 28 23 14 V
 osd_layout 0 30 2 13 V
 osd_layout 0 31 1 0 H
@@ -139,7 +156,7 @@ osd_layout 1 20 16 15 H
 osd_layout 1 21 3 14 H
 osd_layout 1 22 14 11 V
 osd_layout 1 23 2 14 V
-osd_layout 1 27 24 10 V
+osd_layout 1 27 24 10 H
 osd_layout 1 28 23 14 V
 osd_layout 1 30 2 13 H
 osd_layout 1 31 1 0 H
@@ -150,36 +167,41 @@ osd_layout 1 41 2 8 H
 osd_layout 1 42 2 7 H
 osd_layout 2 0 13 1 V
 osd_layout 2 1 1 11 V
-osd_layout 2 3 8 6 V
-osd_layout 2 7 24 3 V
+osd_layout 2 7 24 3 H
 osd_layout 2 9 1 3 H
 osd_layout 2 10 10 1 H
-osd_layout 2 11 2 10 V
-osd_layout 2 12 0 4 V
-osd_layout 2 13 25 9 V
+osd_layout 2 11 2 10 H
+osd_layout 2 12 0 4 H
+osd_layout 2 13 25 9 H
 osd_layout 2 14 2 2 H
-osd_layout 2 15 25 5 V
-osd_layout 2 16 6 12 V
-osd_layout 2 17 6 13 V
+osd_layout 2 15 25 5 H
+osd_layout 2 16 8 10 V
+osd_layout 2 17 8 11 V
 osd_layout 2 20 16 15 H
 osd_layout 2 21 3 14 H
-osd_layout 2 22 14 11 V
 osd_layout 2 23 2 14 H
-osd_layout 2 26 24 7 V
-osd_layout 2 27 24 10 V
-osd_layout 2 28 23 13 V
+osd_layout 2 27 24 10 H
+osd_layout 2 28 23 13 H
 osd_layout 2 30 0 14 V
 osd_layout 2 31 1 0 H
 osd_layout 2 33 1 3 V
-osd_layout 2 34 10 2 V
+osd_layout 2 34 10 2 H
 osd_layout 2 40 8 14 H
 osd_layout 2 41 2 8 V
 osd_layout 2 42 2 7 V
+osd_layout 2 62 9 3 V
+osd_layout 2 63 9 4 V
+osd_layout 2 67 18 4 V
+osd_layout 2 68 18 3 V
+osd_layout 2 75 10 6 V
+osd_layout 2 76 10 7 V
 osd_layout 3 0 13 1 V
 osd_layout 3 1 1 11 V
 osd_layout 3 3 8 6 V
 osd_layout 3 8 11 14 V
+osd_layout 3 29 23 12 V
 osd_layout 3 30 1 13 V
+osd_layout 3 33 0 10 V
 
 # master
 set gyro_hardware_lpf = 256HZ
@@ -193,31 +215,41 @@ set accgain_y = 4072
 set accgain_z = 4058
 set mag_hardware = NONE
 set baro_hardware = BMP280
-set pitot_hardware = VIRTUAL
+set pitot_hardware = NONE
 set rssi_source = PROTOCOL
 set rssi_max = 50
-set serialrx_provider = FPORT
-set serialrx_halfduplex = ON
+set serialrx_provider = CRSF
 set throttle_idle =  8.000
 set failsafe_procedure = RTH
 set align_board_roll = 2
-set align_board_pitch = -60
+set align_board_pitch = -50
 set align_board_yaw = 1800
 set model_preview_type = 8
+set imu_dcm_kp = 1000
+set imu_dcm_ki = 0
 set small_angle = 180
-set imu_acc_ignore_rate = 10
+set imu_acc_ignore_rate = 9
+set imu_acc_ignore_slope = 5
 set applied_defaults = 1
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
 set gps_ublox_use_galileo = ON
-set inav_w_z_baro_p =  0.350
-set nav_rth_allow_landing = NEVER
+set yaw_deadband = 10
+set nav_rth_allow_landing = FS_ONLY
+set nav_rth_alt_mode = AT_LEAST_LINEAR_DESCENT
 set nav_rth_altitude = 6000
+set nav_fw_cruise_thr = 1460
 set nav_fw_max_thr = 1800
 set nav_fw_bank_angle = 60
 set nav_fw_climb_angle = 30
 set nav_fw_dive_angle = 20
 set nav_fw_loiter_radius = 7000
+set nav_fw_launch_max_angle = 180
+set nav_fw_launch_thr = 1800
+set nav_fw_launch_idle_thr = 1150
+set nav_fw_launch_motor_delay = 150
+set nav_fw_launch_timeout = 6000
+set nav_fw_cruise_yaw_rate = 0
 set frsky_pitch_roll = ON
 set osd_video_system = PAL
 set osd_row_shiftdown = 1
@@ -228,28 +260,34 @@ set osd_coordinate_digits = 8
 set osd_failsafe_switch_layout = ON
 set name = HD Wing
 set tz_offset = 60
+set tz_automatic_dst = EU
 set vtx_band = 2
 set vtx_channel = 4
-set vtx_power = 2
+set vtx_power = 3
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 
 # profile
 profile 1
 
-set fw_i_pitch = 9
-set fw_ff_pitch = 56
-set fw_p_roll = 7
-set fw_ff_roll = 25
+set fw_p_pitch = 9
+set fw_i_pitch = 11
+set fw_ff_pitch = 87
+set fw_p_roll = 6
+set fw_i_roll = 8
+set fw_ff_roll = 59
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 600
 set yaw_lpf_hz = 30
 set fw_loiter_direction = YAW
+set nav_fw_pos_z_p = 35
+set nav_fw_pos_xy_p = 70
 set tpa_rate = 30
 set tpa_breakpoint = 1550
-set rc_expo = 30
-set roll_rate = 26
-set pitch_rate = 14
+set rc_expo = 20
+set roll_rate = 36
+set pitch_rate = 18
 set manual_rc_expo = 30
+set manual_rc_yaw_expo = 70
 
 # profile
 profile 2
