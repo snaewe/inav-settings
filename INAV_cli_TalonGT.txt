@@ -23,16 +23,16 @@ smix reset
 
 smix 0 1 0 100 0 -1
 smix 1 2 0 100 0 -1
-smix 2 3 1 50 0 -1
+smix 2 3 1 70 0 -1
 smix 3 3 2 50 0 -1
-smix 4 4 1 -50 0 -1
+smix 4 4 1 -70 0 -1
 smix 5 4 2 50 0 -1
 
 # servo
-servo 1 1000 2000 1450 100
-servo 2 1000 2000 1620 100
-servo 3 1000 2000 1450 -100
-servo 4 1000 2000 1450 -100
+servo 1 1000 2000 1445 100
+servo 2 1000 2000 1615 100
+servo 3 1000 2000 1465 -100
+servo 4 1000 2000 1311 -100
 
 # safehome
 
@@ -263,6 +263,7 @@ set tz_offset = 60
 set tz_automatic_dst = EU
 set vtx_band = 2
 set vtx_channel = 4
+set vtx_power = 3
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 
 # profile
@@ -271,10 +272,11 @@ profile 1
 set fw_p_pitch = 15
 set fw_i_pitch = 5
 set fw_d_pitch = 5
-set fw_ff_pitch = 80
+set fw_ff_pitch = 143
 set fw_p_roll = 15
 set fw_i_roll = 3
 set fw_d_roll = 7
+set fw_ff_roll = 59
 set fw_p_yaw = 20
 set fw_i_yaw = 0
 set fw_ff_yaw = 100
@@ -287,10 +289,11 @@ set nav_fw_pos_z_d = 7
 set nav_fw_pos_xy_p = 55
 set d_boost_min =  1.000
 set d_boost_max =  1.000
+set fw_level_pitch_trim =  5.539
 set rc_expo = 30
 set rc_yaw_expo = 30
-set roll_rate = 18
-set pitch_rate = 9
+set roll_rate = 21
+set pitch_rate = 6
 set yaw_rate = 3
 
 # profile
