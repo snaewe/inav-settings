@@ -23,18 +23,20 @@ smix reset
 
 smix 0 1 0 100 0 -1
 smix 1 2 0 100 0 -1
-smix 2 3 1 70 0 -1
-smix 3 3 2 50 0 -1
-smix 4 4 1 -70 0 -1
-smix 5 4 2 50 0 -1
+smix 2 3 1 50 0 -1
+smix 3 3 6 -50 0 -1
+smix 4 4 1 -50 0 -1
+smix 5 4 6 -50 0 -1
 
 # servo
-servo 1 1000 2000 1445 100
-servo 2 1000 2000 1615 100
-servo 3 1000 2000 1465 -100
-servo 4 1000 2000 1311 -100
+servo 1 1000 2000 1450 100
+servo 2 1000 2000 1580 100
+servo 3 1000 2000 1450 -100
+servo 4 1000 2000 1450 -100
 
 # safehome
+safehome 0 1 530172822 88380670
+safehome 1 1 530116293 88444032
 
 # logic
 
@@ -67,7 +69,8 @@ blackbox MOTORS
 # map
 
 # serial
-serial 0 2 115200 115200 0 115200
+serial 0 64 115200 115200 0 115200
+serial 1 2 115200 115200 0 115200
 serial 30 2048 115200 115200 0 115200
 
 # led
@@ -94,7 +97,7 @@ aux 9 54 6 1300 1700
 aux 10 42 5 1300 1700
 aux 11 43 7 1125 2100
 aux 12 44 5 1700 2100
-aux 13 48 8 900 1225
+aux 13 48 8 1325 2100
 
 # adjrange
 adjrange 0 0 7 1050 1100 53 3
@@ -122,7 +125,8 @@ adjrange 12 0 7 1850 2100 0 3
 osd_layout 0 0 13 1 V
 osd_layout 0 1 1 11 V
 osd_layout 0 2 0 0 V
-osd_layout 0 7 24 3 V
+osd_layout 0 3 8 6 V
+osd_layout 0 7 25 3 V
 osd_layout 0 9 1 3 H
 osd_layout 0 10 22 1 V
 osd_layout 0 11 2 10 V
@@ -131,9 +135,9 @@ osd_layout 0 14 2 2 V
 osd_layout 0 15 24 5 V
 osd_layout 0 20 16 15 H
 osd_layout 0 21 3 14 H
-osd_layout 0 22 14 11 V
+osd_layout 0 22 15 11 V
 osd_layout 0 23 2 14 V
-osd_layout 0 26 24 7 V
+osd_layout 0 26 25 7 V
 osd_layout 0 27 24 10 H
 osd_layout 0 28 23 14 V
 osd_layout 0 29 20 2 H
@@ -149,10 +153,10 @@ osd_layout 0 42 2 7 V
 osd_layout 0 85 25 10 V
 osd_layout 0 96 24 6 V
 osd_layout 0 105 28 2 H
-osd_layout 0 106 24 11 V
+osd_layout 0 106 24 11 H
 osd_layout 0 108 17 1 V
 osd_layout 0 109 1 1 V
-osd_layout 0 110 23 2 V
+osd_layout 0 110 25 2 V
 osd_layout 0 112 7 1 V
 osd_layout 1 0 13 1 V
 osd_layout 1 1 1 11 V
@@ -168,20 +172,20 @@ osd_layout 1 14 2 2 H
 osd_layout 1 15 24 5 V
 osd_layout 1 20 16 15 H
 osd_layout 1 21 3 14 H
-osd_layout 1 22 14 11 V
+osd_layout 1 22 15 11 V
 osd_layout 1 23 2 14 V
 osd_layout 1 28 23 14 V
 osd_layout 1 30 2 13 V
 osd_layout 1 31 1 0 H
 osd_layout 1 32 1 12 V
-osd_layout 1 33 1 3 H
+osd_layout 1 33 1 3 V
 osd_layout 1 34 10 2 V
 osd_layout 1 40 8 14 H
 osd_layout 1 41 2 8 H
 osd_layout 1 42 2 7 H
-osd_layout 1 86 24 12 V
-osd_layout 1 87 24 11 V
-osd_layout 1 107 24 10 V
+osd_layout 1 86 24 12 H
+osd_layout 1 87 24 11 H
+osd_layout 1 107 24 10 H
 osd_layout 2 0 13 1 V
 osd_layout 2 1 1 11 V
 osd_layout 2 7 24 3 H
@@ -191,12 +195,13 @@ osd_layout 2 11 2 10 H
 osd_layout 2 12 0 4 H
 osd_layout 2 13 25 9 H
 osd_layout 2 14 2 2 H
-osd_layout 2 15 25 5 H
+osd_layout 2 15 24 2 V
 osd_layout 2 16 7 10 V
 osd_layout 2 17 7 11 V
 osd_layout 2 20 16 15 H
 osd_layout 2 21 3 14 H
 osd_layout 2 23 2 14 H
+osd_layout 2 25 27 4 V
 osd_layout 2 27 24 10 H
 osd_layout 2 28 23 13 H
 osd_layout 2 30 0 14 V
@@ -214,13 +219,18 @@ osd_layout 2 68 18 6 V
 osd_layout 2 75 7 7 V
 osd_layout 2 76 7 6 V
 osd_layout 3 0 3 9 V
-osd_layout 3 1 1 11 V
+osd_layout 3 1 1 11 H
 osd_layout 3 3 8 6 V
 osd_layout 3 8 9 1 V
-osd_layout 3 29 20 12 V
+osd_layout 3 11 2 11 V
+osd_layout 3 29 20 14 V
 osd_layout 3 30 1 13 V
 osd_layout 3 32 1 12 V
 osd_layout 3 33 1 10 V
+osd_layout 3 50 22 11 H
+osd_layout 3 86 24 10 V
+osd_layout 3 87 24 9 V
+osd_layout 3 105 1 9 V
 
 # master
 set gyro_main_lpf_hz = 25
@@ -238,8 +248,12 @@ set mag_hardware = NONE
 set baro_hardware = SPL06
 set motor_pwm_protocol = STANDARD
 set failsafe_procedure = RTH
+set align_board_pitch = 50
+set current_meter_scale = 317
 set platform_type = AIRPLANE
 set model_preview_type = 28
+set 3d_deadband_low = 1425
+set 3d_neutral = 1475
 set imu_dcm_ki = 0
 set small_angle = 180
 set imu_acc_ignore_rate = 7
@@ -258,8 +272,8 @@ set nav_rth_home_altitude = 5000
 set nav_fw_control_smoothness = 2
 set nav_fw_launch_max_angle = 180
 set nav_fw_launch_motor_delay = 150
-set name = TalonGT
-set tz_offset = 60
+set name = Talon GT
+set tz_offset = 120
 set tz_automatic_dst = EU
 set vtx_band = 2
 set vtx_channel = 4
@@ -272,29 +286,31 @@ profile 1
 set fw_p_pitch = 15
 set fw_i_pitch = 5
 set fw_d_pitch = 5
-set fw_ff_pitch = 143
+set fw_ff_pitch = 80
 set fw_p_roll = 15
 set fw_i_roll = 3
 set fw_d_roll = 7
-set fw_ff_roll = 59
 set fw_p_yaw = 20
 set fw_i_yaw = 0
 set fw_ff_yaw = 100
 set max_angle_inclination_rll = 450
+set max_angle_inclination_pit = 250
 set dterm_lpf_hz = 10
-set fw_loiter_direction = YAW
 set fw_turn_assist_pitch_gain =  0.500
+set fw_yaw_iterm_freeze_bank_angle = 1
 set nav_fw_pos_z_p = 25
 set nav_fw_pos_z_d = 7
 set nav_fw_pos_xy_p = 55
 set d_boost_min =  1.000
 set d_boost_max =  1.000
-set fw_level_pitch_trim =  5.539
+set d_boost_max_at_acceleration =  7500.010
+set tpa_breakpoint = 1510
 set rc_expo = 30
 set rc_yaw_expo = 30
-set roll_rate = 21
-set pitch_rate = 6
-set yaw_rate = 3
+set pitch_rate = 15
+set yaw_rate = 9
+set manual_roll_rate = 70
+set manual_pitch_rate = 70
 
 # profile
 profile 2
@@ -308,9 +324,10 @@ profile 3
 battery_profile 1
 
 set throttle_idle =  5.000
+set nav_fw_cruise_thr = 1460
 set nav_fw_max_thr = 1750
-set nav_fw_launch_thr = 1750
-set nav_fw_launch_idle_thr = 1210
+set nav_fw_launch_thr = 1950
+set nav_fw_launch_idle_thr = 1580
 
 # battery_profile
 battery_profile 2
