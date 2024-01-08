@@ -70,8 +70,16 @@ blackbox -PEAKS_Y
 set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
-set gyro_zero_z = -1
+set gyro_zero_x = 4
+set gyro_zero_y = 2
+set ins_gravity_cmss =  981.168
 set acc_hardware = BMI270
+set acczero_x = -9
+set acczero_y = 1
+set acczero_z = 7
+set accgain_x = 4057
+set accgain_y = 4060
+set accgain_z = 4048
 set align_mag = CW270FLIP
 set mag_hardware = NONE
 set baro_hardware = SPL06
