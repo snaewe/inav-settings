@@ -1,4 +1,6 @@
-diff all
+
+
+# diff all 
 
 # version
 # INAV/MATEKF405SE 6.1.1 Jun 13 2023 / 11:26:15 (42ced253)
@@ -65,7 +67,7 @@ blackbox -PEAKS_Y
 serial 0 64 115200 115200 0 115200
 serial 1 0 115200 115200 0 115200
 serial 2 2048 115200 115200 0 115200
-serial 3 1 115200 115200 0 115200
+serial 3 33554432 115200 115200 0 115200
 serial 4 2 115200 115200 0 115200
 serial 5 262144 115200 115200 0 115200
 serial 30 0 115200 115200 0 115200
@@ -92,7 +94,7 @@ aux 11 43 7 1125 2100
 aux 12 44 5 1700 2100
 
 # Adjustments [adjrange]
-adjrange 0 0 7 1050 1100 53 3
+adjrange 0 0 7 1050 1100 0 3
 adjrange 1 0 7 1100 1150 58 3
 adjrange 2 0 7 1175 1225 34 3
 adjrange 3 0 7 1250 1300 32 3
@@ -114,71 +116,74 @@ adjrange 12 0 7 1850 2100 0 3
 #wp 0 invalid
 
 # OSD [osd_layout]
-osd_layout 0 0 13 1 V
-osd_layout 0 1 1 11 V
+osd_layout 0 0 24 1 V
+osd_layout 0 1 4 12 V
 osd_layout 0 2 0 0 V
-osd_layout 0 7 24 3 V
+osd_layout 0 3 8 6 V
+osd_layout 0 4 8 6 V
+osd_layout 0 7 44 4 V
 osd_layout 0 9 1 3 H
-osd_layout 0 10 22 1 V
-osd_layout 0 11 2 10 V
-osd_layout 0 13 25 9 V
-osd_layout 0 14 2 2 V
-osd_layout 0 15 24 5 V
+osd_layout 0 10 39 1 H
+osd_layout 0 11 4 11 V
+osd_layout 0 12 3 5 V
+osd_layout 0 13 45 10 V
+osd_layout 0 14 4 2 V
+osd_layout 0 15 44 5 V
 osd_layout 0 20 16 15 H
 osd_layout 0 21 3 14 H
-osd_layout 0 22 14 11 V
-osd_layout 0 23 2 14 V
-osd_layout 0 26 24 7 V
+osd_layout 0 22 26 9 V
+osd_layout 0 23 4 16 V
+osd_layout 0 26 45 8 V
 osd_layout 0 27 24 10 H
-osd_layout 0 28 23 14 V
+osd_layout 0 28 43 16 V
 osd_layout 0 29 20 2 H
-osd_layout 0 30 2 13 V
+osd_layout 0 30 15 16 V
 osd_layout 0 31 1 0 H
-osd_layout 0 32 1 12 V
-osd_layout 0 33 1 3 V
-osd_layout 0 34 10 2 V
-osd_layout 0 35 1 5 V
-osd_layout 0 40 8 14 V
-osd_layout 0 41 2 8 V
-osd_layout 0 42 2 7 V
+osd_layout 0 32 4 13 V
+osd_layout 0 33 3 3 V
+osd_layout 0 34 21 2 V
+osd_layout 0 35 4 6 V
+osd_layout 0 40 10 16 V
+osd_layout 0 41 4 9 V
+osd_layout 0 42 4 8 V
 osd_layout 0 85 25 10 H
-osd_layout 0 96 24 6 V
+osd_layout 0 96 44 6 V
 osd_layout 0 105 28 2 H
-osd_layout 0 106 24 11 V
-osd_layout 0 108 17 1 V
-osd_layout 0 109 1 1 V
-osd_layout 0 110 23 2 V
-osd_layout 0 112 7 1 V
-osd_layout 1 0 13 1 V
-osd_layout 1 1 1 11 V
+osd_layout 0 106 45 12 V
+osd_layout 0 108 32 1 V
+osd_layout 0 109 3 1 V
+osd_layout 0 110 41 2 V
+osd_layout 0 112 11 1 V
+osd_layout 1 0 24 0 V
+osd_layout 1 1 3 11 V
 osd_layout 1 2 0 0 V
 osd_layout 1 3 8 6 V
 osd_layout 1 7 24 3 H
 osd_layout 1 9 1 3 H
 osd_layout 1 10 10 1 H
-osd_layout 1 11 2 10 V
-osd_layout 1 12 1 4 V
-osd_layout 1 13 25 9 V
+osd_layout 1 11 4 10 V
+osd_layout 1 12 4 4 V
+osd_layout 1 13 44 9 V
 osd_layout 1 14 2 2 H
-osd_layout 1 15 24 5 V
+osd_layout 1 15 44 5 V
 osd_layout 1 20 16 15 H
 osd_layout 1 21 3 14 H
-osd_layout 1 22 14 11 V
-osd_layout 1 23 2 14 V
-osd_layout 1 28 23 14 V
-osd_layout 1 30 2 13 V
+osd_layout 1 22 26 9 V
+osd_layout 1 23 3 16 V
+osd_layout 1 28 43 16 V
+osd_layout 1 30 15 16 V
 osd_layout 1 31 1 0 H
-osd_layout 1 32 1 12 V
+osd_layout 1 32 3 12 V
 osd_layout 1 33 1 3 H
-osd_layout 1 34 10 2 V
+osd_layout 1 34 21 1 V
 osd_layout 1 40 8 14 H
 osd_layout 1 41 2 8 H
 osd_layout 1 42 2 7 H
-osd_layout 1 86 24 12 V
-osd_layout 1 87 24 11 V
-osd_layout 1 107 24 10 V
+osd_layout 1 86 44 14 V
+osd_layout 1 87 44 13 V
+osd_layout 1 107 44 11 V
 osd_layout 2 0 13 1 V
-osd_layout 2 1 1 11 V
+osd_layout 2 1 4 1 V
 osd_layout 2 7 24 3 H
 osd_layout 2 9 1 3 H
 osd_layout 2 10 10 1 H
@@ -194,7 +199,7 @@ osd_layout 2 21 3 14 H
 osd_layout 2 23 2 14 H
 osd_layout 2 27 24 10 H
 osd_layout 2 28 23 13 H
-osd_layout 2 30 0 14 V
+osd_layout 2 30 15 16 V
 osd_layout 2 31 1 0 H
 osd_layout 2 33 1 3 H
 osd_layout 2 34 10 2 H
@@ -209,14 +214,14 @@ osd_layout 2 68 18 6 V
 osd_layout 2 75 7 7 V
 osd_layout 2 76 7 6 V
 osd_layout 2 135 6 3 V
-osd_layout 3 0 3 9 V
-osd_layout 3 1 1 11 V
+osd_layout 3 0 4 9 V
+osd_layout 3 1 3 11 V
 osd_layout 3 3 8 6 V
-osd_layout 3 8 9 1 V
-osd_layout 3 29 20 12 V
-osd_layout 3 30 1 13 V
-osd_layout 3 32 1 12 V
-osd_layout 3 33 1 10 V
+osd_layout 3 8 22 0 V
+osd_layout 3 29 36 0 V
+osd_layout 3 30 15 16 V
+osd_layout 3 32 3 12 V
+osd_layout 3 33 3 10 V
 
 # Programming: logic
 
@@ -228,10 +233,10 @@ osd_layout 3 33 1 10 V
 set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
-set gyro_zero_x = -28
-set gyro_zero_y = -22
-set gyro_zero_z = -26
-set ins_gravity_cmss =  978.582
+set gyro_zero_x = -35
+set gyro_zero_y = -20
+set gyro_zero_z = -16
+set ins_gravity_cmss =  987.470
 set acc_hardware = MPU6000
 set acczero_x = 46
 set acczero_y = -30
@@ -272,7 +277,7 @@ set nav_fw_launch_idle_motor_delay = 2000
 set nav_fw_launch_motor_delay = 150
 set nav_fw_launch_max_altitude = 5000
 set nav_fw_cruise_yaw_rate = 0
-set osd_video_system = PAL
+set osd_video_system = AVATAR
 set osd_time_alarm = 0
 set osd_alt_alarm = 0
 set osd_dist_alarm = 0
@@ -308,7 +313,7 @@ set nav_fw_pos_z_d = 8
 set nav_fw_pos_xy_p = 55
 set d_boost_min =  1.000
 set d_boost_max =  1.000
-set fw_level_pitch_trim =  5.000
+set fw_level_pitch_trim =  5.064
 set tpa_breakpoint = 1510
 set rc_expo = 20
 set rc_yaw_expo = 30
