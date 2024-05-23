@@ -1,4 +1,6 @@
-diff all
+
+
+# diff all 
 
 # version
 # INAV/MATEKF405 2.5.2 Aug  4 2020 / 10:15:56 (faaedc7cb)
@@ -26,12 +28,12 @@ smix 0 3 0 50 0 -1
 smix 1 3 1 50 0 -1
 smix 2 4 0 -50 0 -1
 smix 3 4 1 50 0 -1
-smix 4 5 6 100 0 0
+smix 4 5 6 100 0 -1
+smix 5 6 4 100 0 -1
 
 # servo
-servo 3 1000 2000 1450 -100
-servo 4 1000 2000 1419 100
-servo 5 1000 2000 1496 100
+servo 3 1000 2000 1507 -100
+servo 4 1000 2000 1374 100
 
 # logic
 logic 0 0 -1 1 3 4 0 0 0
@@ -42,7 +44,6 @@ logic 0 0 -1 1 3 4 0 0 0
 
 # feature
 feature -TX_PROF_SEL
-feature -AIRMODE
 feature MOTOR_STOP
 feature GPS
 feature LED_STRIP
@@ -59,7 +60,7 @@ beeper -ON_USB
 serial 0 64 115200 115200 0 115200
 serial 1 2048 115200 115200 0 115200
 serial 2 2 115200 115200 0 115200
-serial 4 1 57600 115200 0 115200
+serial 4 1 115200 115200 0 115200
 
 # led
 led 0 5,7::CB:2
@@ -117,7 +118,6 @@ osd_layout 0 7 24 3 V
 osd_layout 0 9 1 3 H
 osd_layout 0 10 22 1 V
 osd_layout 0 11 2 10 V
-osd_layout 0 12 0 4 V
 osd_layout 0 13 25 9 V
 osd_layout 0 14 2 2 V
 osd_layout 0 15 25 5 V
@@ -149,7 +149,7 @@ osd_layout 1 7 24 3 H
 osd_layout 1 9 1 3 H
 osd_layout 1 10 10 1 H
 osd_layout 1 11 1 10 V
-osd_layout 1 12 0 4 V
+osd_layout 1 12 1 4 V
 osd_layout 1 13 25 9 V
 osd_layout 1 14 2 2 H
 osd_layout 1 15 25 5 V
@@ -227,8 +227,8 @@ set motor_pwm_rate = 8000
 set motor_pwm_protocol = DSHOT300
 set throttle_idle =  7.000
 set failsafe_procedure = RTH
-set align_board_pitch = 15
-set current_meter_scale = 150
+set align_board_pitch = 40
+set current_meter_scale = 145
 set platform_type = AIRPLANE
 set model_preview_type = 8
 set small_angle = 180
@@ -243,7 +243,7 @@ set nav_rth_allow_landing = FS_ONLY
 set nav_rth_alt_mode = AT_LEAST_LINEAR_DESCENT
 set nav_rth_altitude = 7000
 set nav_rth_home_altitude = 5000
-set nav_fw_cruise_thr = 1470
+set nav_fw_cruise_thr = 1500
 set nav_fw_max_thr = 1900
 set nav_fw_bank_angle = 45
 set nav_fw_climb_angle = 30
@@ -272,12 +272,12 @@ set vtx_low_power_disarm = UNTIL_FIRST_ARM
 # profile
 profile 1
 
-set fw_p_pitch = 9
-set fw_i_pitch = 19
-set fw_ff_pitch = 86
-set fw_p_roll = 6
-set fw_i_roll = 12
-set fw_ff_roll = 55
+set fw_p_pitch = 11
+set fw_i_pitch = 9
+set fw_ff_pitch = 76
+set fw_p_roll = 7
+set fw_i_roll = 11
+set fw_ff_roll = 60
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 350
 set yaw_lpf_hz = 30
@@ -285,8 +285,8 @@ set fw_iterm_limit_stick_position =  0.250
 set tpa_rate = 30
 set tpa_breakpoint = 1550
 set rc_expo = 20
-set roll_rate = 30
-set pitch_rate = 14
+set roll_rate = 32
+set pitch_rate = 18
 set manual_rc_expo = 30
 
 # profile
