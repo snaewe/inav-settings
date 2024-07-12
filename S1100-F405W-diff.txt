@@ -1,6 +1,4 @@
-
-
-# diff all 
+diff all
 
 # version
 # INAV/MATEKF405SE 7.1.1 May  6 2024 / 12:09:25 (dd91a871)
@@ -17,7 +15,8 @@ defaults noreboot
 # Timer overrides
 
 # Outputs [servo]
-servo 1 1000 2000 1500 -100
+servo 1 1000 2000 1486 -100
+servo 2 1000 2000 1570 100
 
 # safehome
 
@@ -77,11 +76,12 @@ aux 4 11 2 1300 1700
 aux 5 10 2 1700 2100
 aux 6 28 4 1300 1700
 aux 7 3 4 1300 2100
-aux 8 21 6 1725 2100
-aux 9 54 6 1300 1700
-aux 10 42 5 1300 1700
-aux 11 43 7 1125 2100
-aux 12 44 5 1700 2100
+aux 8 3 2 1300 1700
+aux 9 21 6 1725 2100
+aux 10 54 6 1300 1700
+aux 11 42 5 1300 1700
+aux 12 43 7 1125 2100
+aux 13 44 5 1700 2100
 
 # Adjustments [adjrange]
 adjrange 0 0 7 1050 1100 0 3
@@ -225,10 +225,10 @@ osd_layout 3 33 3 10 V
 set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
-set gyro_zero_x = -29
-set gyro_zero_y = -21
-set gyro_zero_z = -24
-set ins_gravity_cmss =  976.115
+set gyro_zero_x = -38
+set gyro_zero_y = -19
+set gyro_zero_z = -13
+set ins_gravity_cmss =  985.581
 set acc_hardware = MPU6000
 set acczero_x = -3
 set acczero_y = -27
@@ -281,6 +281,7 @@ set vtx_band = 2
 set vtx_channel = 4
 set vtx_power = 2
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
+set dshot_beeper_enabled = OFF
 
 # mixer_profile
 mixer_profile 1
@@ -343,6 +344,7 @@ profile 2
 
 set max_angle_inclination_rll = 600
 set max_angle_inclination_pit = 350
+set fw_level_pitch_trim =  3.577
 set tpa_breakpoint = 1510
 set rc_expo = 20
 set rc_yaw_expo = 30
@@ -357,7 +359,7 @@ profile 3
 # battery_profile
 battery_profile 1
 
-set nav_fw_cruise_thr = 2000
+set nav_fw_cruise_thr = 1540
 set nav_fw_min_thr = 1050
 set nav_fw_launch_idle_thr = 1150
 
