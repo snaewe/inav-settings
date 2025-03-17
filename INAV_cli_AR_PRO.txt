@@ -17,8 +17,8 @@ timer_output_mode 2 MOTORS
 timer_output_mode 3 SERVOS
 
 # Outputs [servo]
-servo 1 1000 2000 1500 -100
-servo 2 1000 2000 1400 100
+servo 1 1000 2000 1488 -100
+servo 2 1000 2000 1368 100
 
 # safehome
 
@@ -222,9 +222,10 @@ osd_layout 3 33 3 10 V
 set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
-set gyro_zero_x = 6
+set gyro_zero_x = 12
+set gyro_zero_y = 1
 set gyro_zero_z = 17
-set ins_gravity_cmss =  984.551
+set ins_gravity_cmss =  973.899
 set acc_hardware = MPU6000
 set acczero_x = 17
 set acczero_y = 12
@@ -258,7 +259,7 @@ set nav_rth_home_altitude = 6000
 set nav_rth_linear_descent_start_distance = 200
 set nav_rth_use_linear_descent = ON
 set nav_fw_bank_angle = 45
-set nav_fw_control_smoothness = 2
+set nav_fw_control_smoothness = 6
 set nav_fw_launch_max_angle = 75
 set nav_fw_launch_idle_motor_delay = 2000
 set nav_fw_launch_motor_delay = 100
@@ -308,13 +309,14 @@ mixer_profile 2
 # profile
 profile 1
 
-set fw_p_pitch = 15
+set fw_p_pitch = 10
 set fw_i_pitch = 5
 set fw_d_pitch = 5
-set fw_ff_pitch = 70
-set fw_p_roll = 15
+set fw_ff_pitch = 144
+set fw_p_roll = 10
 set fw_i_roll = 3
 set fw_d_roll = 7
+set fw_ff_roll = 57
 set fw_p_yaw = 20
 set fw_i_yaw = 0
 set fw_ff_yaw = 100
@@ -325,9 +327,10 @@ set nav_fw_pos_z_p = 35
 set nav_fw_pos_xy_p = 70
 set d_boost_min =  1.000
 set d_boost_max =  1.000
+set fw_level_pitch_trim = -0.233
 set rc_expo = 30
 set rc_yaw_expo = 30
-set roll_rate = 18
+set roll_rate = 22
 set pitch_rate = 9
 set yaw_rate = 3
 
@@ -346,7 +349,7 @@ battery_profile 1
 set vbat_min_cell_voltage = 320
 set vbat_warning_cell_voltage = 330
 set throttle_idle =  11.000
-set nav_fw_cruise_thr = 1480
+set nav_fw_cruise_thr = 1430
 set nav_fw_min_thr = 1150
 set nav_fw_max_thr = 1900
 set nav_fw_launch_thr = 1800
