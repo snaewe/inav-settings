@@ -229,10 +229,10 @@ osd_layout 3 33 3 10 V
 set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
-set gyro_zero_x = -1
+set gyro_zero_x = -2
 set gyro_zero_y = -2
-set gyro_zero_z = 13
-set ins_gravity_cmss =  984.952
+set gyro_zero_z = 11
+set ins_gravity_cmss =  985.794
 set acc_hardware = ICM42605
 set acczero_x = -3
 set acczero_y = 1
@@ -360,7 +360,7 @@ set nav_fw_cruise_thr = 1450
 set nav_fw_min_thr = 1150
 set nav_fw_max_thr = 1850
 set nav_fw_launch_thr = 1750
-set nav_fw_launch_idle_thr = 1150
+set nav_fw_launch_idle_thr = 1200
 
 # battery_profile
 battery_profile 2
